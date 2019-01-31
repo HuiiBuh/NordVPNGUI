@@ -1,0 +1,491 @@
+<head>
+  <title>NordVPN - Connect</title>
+  <link rel="icon" href="icons/nordvpn.png" type="image/x-icon">
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--Icons-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!--CSS-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/own.css">
+
+  <!--JavaScript-->
+  <script type="text/javascript" src="js/jquery-3.3.1.slim.min.js"></script>
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/server.js"></script>
+
+  <!--eel-->
+  <script type="text/javascript" src="/eel.js"></script>
+
+  <style>
+    tr:hover {
+      background-color: #d1d1d1 !important;
+    }
+  </style>
+
+</head>
+
+<body style="height:100vh" id="body">
+  <nav class="navbar" style="background-color: #145079;" id="navbar">
+    <a class="navbar-brand" href="#"><img src="icons/nordvpn_nav.png" style="width:2em;" /></a>
+    <a class="nav-link" href="#">Server</a>
+    <a class="nav-link" href="settings.html">Settings</a>
+  </nav>
+
+  <div class="row no-gutters" id="mainPage">
+    <div class="col-4" style="max-height: 100%; overflow-y: auto;">
+      <form style="margin: auto; margin-top: 6px; width: 97%">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+      </form>
+      <div class="dropdown-divider"></div>
+      <div style="margin: auto; margin-top: 6px; width: 97%">
+        <p>
+          <button class="btn btn-primary" data-toggle="collapse" data-target="#specialServers" aria-expanded="false"
+            style="background-color: #145079">
+            Special Servers<a class="material-icons align-middle" id="specialServerIcon">keyboard_arrow_right</a>
+          </button>
+        </p>
+        <div class="collapse" id="specialServers">
+          <table class="table table-borderless hover">
+            <tbody>
+              <tr>
+                <td class="align-middle"> <img src="icons/p2p.png" style="width:2em;" /></td>
+                <td class="align-middle">P2P</td>
+                <td>
+                  <div class="dropleft">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false" style="float:right">
+                      Select Server
+                    </button>
+                    <div class="dropdown-menu"">
+                      <table class=" table table-borderless hover">
+            <tbody>
+              <tr>
+                <td class="align-middle">Germany</td>
+                <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+              </tr>
+              <tr>
+                <td class="align-middle">England</td>
+                <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+              </tr>
+              <tr>
+                <td class="align-middle">USA</td>
+                <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+              </tr>
+              <tr>
+                <td class="align-middle">Italien</td>
+                <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </td>
+      </tr>
+      <tr>
+        <td class="align-middle"> <img class="align-middle" src="icons/onion.png" style="width:2em" /></td>
+        <td class="align-middle">Onion Over VPN</td>
+        <td>
+          <div class="dropleft">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false" style="float:right">
+              Select Server
+            </button>
+            <div class="dropdown-menu">
+              <table class="table table-borderless hover">
+                <tbody>
+                  <tr>
+                    <td class="align-middle">Germany</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">England</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">USA</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">Italien</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="align-middle"><img src="icons/vpn.png" style="width:2em;" /></td>
+        <td class="align-middle">Double VPN</td>
+        <td>
+          <div class="dropleft">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false" style="float:right">
+              Select Server
+            </button>
+            <div class="dropdown-menu">
+              <table class="table table-borderless hover">
+                <tbody>
+                  <tr>
+                    <td class="align-middle">Germany</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">England</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">USA</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">Italien</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="align-middle"> <img src="icons/home.png" style="width:2em;" /></td>
+        <td class="align-middle">Dedicated IP</td>
+        <td>
+          <div class="dropleft">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false" style="float:right">
+              Select Server
+            </button>
+            <div class="dropdown-menu">
+              <table class="table table-borderless hover">
+                <tbody>
+                  <tr>
+                    <td class="align-middle">Germany</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">England</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">USA</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">Italien</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="align-middle"> <img src="icons/p2p.png" style="width:2em;" /></td>
+        <td class="align-middle">P2P</td>
+        <td>
+          <div class="dropleft">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false" style="float:right">
+              Select Server
+            </button>
+            <div class="dropdown-menu">
+              <table class="table table-borderless hover">
+                <tbody>
+                  <tr>
+                    <td class="align-middle">Germany</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">England</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">USA</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">Italien</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="align-middle"> <img class="align-middle" src="icons/onion.png" style="width:2em" /></td>
+        <td class="align-middle">Onion Over VPN</td>
+        <td>
+          <div class="dropleft">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false" style="float:right">
+              Select Server
+            </button>
+            <div class="dropdown-menu">
+              <table class="table table-borderless hover">
+                <tbody>
+                  <tr>
+                    <td class="align-middle">Germany</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">England</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">USA</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">Italien</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="align-middle"><img src="icons/vpn.png" style="width:2em;" /></td>
+        <td class="align-middle">Double VPN</td>
+        <td>
+          <div class="dropleft">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false" style="float:right">
+              Select Server
+            </button>
+            <div class="dropdown-menu">
+              <table class="table table-borderless hover">
+                <tbody>
+                  <tr>
+                    <td class="align-middle">Germany</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">England</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">USA</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">Italien</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="align-middle"> <img src="icons/home.png" style="width:2em;" /></td>
+        <td class="align-middle">Dedicated IP</td>
+        <td>
+          <div class="dropleft">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false" style="float:right">
+              Select Server
+            </button>
+            <div class="dropdown-menu">
+              <table class="table table-borderless hover">
+                <tbody>
+                  <tr>
+                    <td class="align-middle">Germany</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">England</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">USA</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle">Italien</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="dropdown-divider"></div>
+
+  <div style="margin: auto; margin-top: 6px; width: 97%">
+    <p>
+      <button class="btn btn-primary" data-toggle="collapse" data-target="#allCountries" style="background-color: #145079">
+        All Countries <a class="material-icons align-middle" id="allCountriesIcon">keyboard_arrow_right</a>
+      </button>
+    </p>
+    <div class="collapse" id="allCountries">
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <td class="align-middle">Germanyy</td>
+            <td>
+              <div class="dropleft">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false" style="float:right">
+                  Select Server
+                </button>
+                <div class="dropdown-menu">
+                  <table class="table table-borderless hover">
+                    <tbody>
+                      <tr>
+                        <td class="align-middle">Germany</td>
+                        <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">England</td>
+                        <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">USA</td>
+                        <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">Italien</td>
+                        <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-middle">England</td>
+            <td>
+              <div class="dropleft">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false" style="float:right">
+                  Select Server
+                </button>
+                <div class="dropdown-menu">
+                  <table class="table table-borderless hover">
+                    <tbody>
+                      <tr>
+                        <td class="align-middle">Germany</td>
+                        <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">England</td>
+                        <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">USA</td>
+                        <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">Italien</td>
+                        <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-middle">USA</td>
+            <td>
+              <div class="dropleft">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false" style="float:right">
+                  Select Server
+                </button>
+                <div class="dropdown-menu">
+                  <table class="table table-borderless hover">
+                    <tbody>
+                      <tr>
+                        <td class="align-middle">Germany</td>
+                        <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">England</td>
+                        <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">USA</td>
+                        <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">Italien</td>
+                        <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-middle">Italien</td>
+            <td>
+              <div class="dropleft">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false" style="float:right">
+                  Select Server
+                </button>
+                <div class="dropdown-menu">
+                  <table class="table table-borderless hover">
+                    <tbody>
+                      <tr>
+                        <td class="align-middle">Germany</td>
+                        <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">England</td>
+                        <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">USA</td>
+                        <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">Italien</td>
+                        <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+
+
+  <div class="col-8" style="background-color: #c3c3c3; max-height: 100%;">
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13368873.887897003!2d14.748314169720196!3d41.99236856828208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2sde!4v1548786446659&zoom=18"
+      width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+
+
+  </div>
+</body>

@@ -1,0 +1,13 @@
+#navbar a:link {
+  color: white;
+}
+
+#navbar a:visited {
+  color: white
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: #145079;
+  background-color: #145079;
+}
