@@ -29,8 +29,8 @@ $(document).ready(function () {
 
 function doneResizing(){
   var body = window.innerHeight;
-  var navbar = $("#navbar").height();
-  var mainPage = body - navbar - 20;
-  console.log("Main Page: " + mainPage);
+  var navbar = document.getElementById('navbar').offsetHeight;
+
+  var mainPage = body - navbar;
   document.getElementById("mainPage").style.height = mainPage;
 }
