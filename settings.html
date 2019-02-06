@@ -1,0 +1,332 @@
+<head>
+  <title>NordVPN - Settings</title>
+  <link rel="icon" href="icons/nordvpn.png" type="image/x-icon">
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--Icons-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!--CSS-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/own.css">
+
+  <!--JavaScript-->
+  <script type="text/javascript" src="js/jquery-3.3.1.slim.min.js"></script>
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/settings.js"></script>
+
+  <!--eel-->
+  <script type="text/javascript" src="/eel.js"></script>
+
+</head>
+
+<body>
+  <nav class="navbar" style="background-color: #145079;" id="navbar">
+    <a class="navbar-brand" href="server.html"><img src="icons/nordvpn_nav.png" style="width:2em; margin-right: 8px"></a>
+    <a class="nav-link" href="server.html">Server</a>
+    <a class="nav-link" href="#">Settings</a>
+  </nav>
+
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>
+          <p class="font-weight-normal" style="margin-bottom: 0.2rem">CyberSec</p>
+          <p class="font-weight-light" style="margin-bottom: 0.4rem">Avoid ads and protect your security from maleware,
+            phishing and other threats</p>
+        </td>
+        <td class="align-middle">
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="cyberSec">
+            <label class="custom-control-label" for="cyberSec"></label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p class="font-weight-normal" style="margin-bottom: 0.2rem">Auto Connect</p>
+          <p class="font-weight-light" style="margin-bottom: 0.4rem">Autoconnect to $country
+            <a href="#" data-toggle="modal" data-target="#changeAutoconnectLocationModal">Change</a>
+
+            <div class="modal fade" id="changeAutoconnectLocationModal" tabindex="-1" role="dialog" aria-labelledby="changeAutoconnectLocationModal"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Select Country</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <table class="table table-borderless table-hover">
+                      <tbody>
+                        <tr>
+                          <td class="align-middle">Germany</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">England</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">USA</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">Italien</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">Germany</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">England</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">USA</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">Italien</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">Germany</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">England</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">USA</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">Italien</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">Germany</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">England</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">USA</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">Italien</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">Germany</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">England</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">USA</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">Italien</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">Germany</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">England</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">USA</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">Italien</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">Germany</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">England</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">USA</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">Italien</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">Germany</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">England</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">USA</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">Italien</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">Germany</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">England</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">USA</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">Italien</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">Germany</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">England</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">USA</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle">Italien</td>
+                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">power_settings_new</a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </p>
+        </td>
+        <td class="align-middle">
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="autoConnect">
+            <label class="custom-control-label" for="autoConnect"></label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p class="font-weight-normal" style="margin-bottom: 0.2rem">Internet Kill Switch</p>
+          <p class="font-weight-light" style="margin-bottom: 0.4rem">You will be abled to access the Internet only when
+            connected to VPN</p>
+        </td>
+        <td class="align-middle">
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="killSwitch">
+            <label class="custom-control-label" for="killSwitch"></label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p class="font-weight-normal" style="margin-bottom: 0.2rem">Protocol</p>
+          <p class="font-weight-light" style="margin-bottom: 0.4rem">Choose between TCP and UDP protocols for VPN
+            connection (UDP recommended)</p>
+        </td>
+        <td class="align-middle">
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="TCP" value="TCP">
+            <label class="form-check-label" for="TCP">TCP</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="UDP" value="UDP">
+            <label class="form-check-label" for="UDP">UDP</label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p class="font-weight-normal" style="margin-bottom: 0.2rem">Custom DNS</p>
+          <p class="font-weight-light" style="margin-bottom: 0.4rem" id="customDNSText">Set custom DNS (CyberSec not
+            working when set)</br>
+            <a href="#" data-toggle="modal" data-target="#DNSChange" id="DNSModalTrigger">Add another DNS</a>
+
+            <div class="modal fade" id="DNSChange" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Change the DSN from the default to your DNS</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col">
+                        <input onkeydown="return checkKey(event)" class="form-control" type="text" placeholder="DNS" id="setcustomDNS">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-primary" style="background-color: #145079;">Cancel</button>
+                    <button type="button" id="saveDNS" onClick="saveDNS()" class="btn btn-primary" style="background-color: #145079;">Save
+                      changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </p>
+        </td>
+        <td class="align-middle">
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="customDNSSlider">
+            <label class="custom-control-label" for="customDNSSlider"></label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p class="font-weight-normal" style="margin-bottom: 0.2rem">Obfuscated Servers</p>
+          <p class="font-weight-light" style="margin-bottom: 0.4rem">Servers allowing users to enjiy NordVPN from
+            restricted locations</br> Note: This option may slow down your network</p>
+        </td>
+        <td class="align-middle">
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="obfuscatedServers">
+            <label class="custom-control-label" for="obfuscatedServers"></label>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
