@@ -11,3 +11,23 @@
   border-color: #145079;
   background-color: #145079;
 }
+
+.floatingOver {
+  z-index: 1000;
+  background-color: white;
+  position: absolute;
+  height: 80px;
+}
+
+.btn{
+  border-radius: 0px;
+  border-color: #14517900;
+}
+
+#quickConnectButton {
+  height: 40px;
+  margin-top: 20px;
+  border-radius: 0px;
+  position: absolute;
+  background-color: #145079;
+}
