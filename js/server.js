@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
   doneResizing();
-  
+
   $("#allCountries").collapse('show')
 
   $("#allCountries").on('show.bs.collapse', function () {
@@ -34,6 +34,10 @@ function doneResizing() {
   var mainPageHeight = body - navbar;
   document.getElementById("mainPage").style.height = mainPageHeight;
 
+
+
+
+
   //set the floating connect Button to the right position
   mapWidth = document.getElementById("map").offsetWidth;
   connectionStatusWidth = mapWidth * 2 / 3;
@@ -59,6 +63,10 @@ function doneResizing() {
     document.getElementById("quickConnectButton").style.marginLeft = connectionStatusWidth - 200 - connectionStatusWidth / 80;
     document.getElementById("connectionMessage").style.maxWidth = connectionStatusWidth - 200 - connectionStatusWidth / 40;
   }
+
+  //style svg
+  document.getElementById("worldSVG").style.height = mainPageHeight;
+  document.getElementById("worldSVG").style.width = mapWidth;
 }
 
 
