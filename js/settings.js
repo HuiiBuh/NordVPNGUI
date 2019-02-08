@@ -1,3 +1,11 @@
+function checkKey(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    saveDNS();
+  }
+  event.stopPropagation();
+}
+
 function saveDNS() {
   var DNS = document.getElementById("setcustomDNS").value;
 
@@ -27,15 +35,6 @@ function saveDNS() {
     alert("Your DNS has not the right format.")
   }
 }
-
-function checkKey(event) {
-  if (event.key === 'Enter') {
-    event.preventDefault();
-    saveDNS();
-  }
-  event.stopPropagation();
-}
-
 /*
 badge badge-secondary
 */

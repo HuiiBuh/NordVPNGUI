@@ -1,5 +1,8 @@
+<!doctype html>
+<html lang="en">
+
 <head>
-  <title>NordVPN - Settings</title>
+  <title>Settings</title>
   <link rel="icon" href="icons/nordvpn.png" type="image/x-icon">
 
   <!-- Required meta tags -->
@@ -20,6 +23,13 @@
   <!--eel-->
   <script type="text/javascript" src="/eel.js"></script>
 
+  <style>
+    .custom-control-label {
+      cursor: pointer;
+    }
+  </style>
+
+
 </head>
 
 <body>
@@ -39,7 +49,7 @@
         </td>
         <td class="align-middle">
           <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input" id="cyberSec">
+            <input type="checkbox" class="custom-control-input" id="cyberSec" style="cursor: pointer;">
             <label class="custom-control-label" for="cyberSec"></label>
           </div>
         </td>
@@ -299,13 +309,12 @@
             connection (UDP recommended)</p>
         </td>
         <td class="align-middle">
-
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="TCP" value="TCP">
+            <input class="form-check-input" style="cursor: pointer;" type="radio" name="inlineRadioOptions" id="TCP" value="TCP">
             <label class="form-check-label" for="TCP">TCP</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="UDP" value="UDP">
+            <input class="form-check-input" type="radio" style="cursor: pointer;" name="inlineRadioOptions" id="UDP" value="UDP">
             <label class="form-check-label" for="UDP">UDP</label>
           </div>
         </td>
@@ -371,3 +380,5 @@
     </tbody>
   </table>
 </body>
+
+</html>

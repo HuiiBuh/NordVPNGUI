@@ -22,7 +22,7 @@ $(document).ready(function () {
 var resizeId;
 $(window).resize(function () {
   clearTimeout(resizeId);
-  resizeId = setTimeout(doneResizing, 20);
+  resizeId = setTimeout(doneResizing, 1);
 });
 
 
@@ -32,48 +32,35 @@ function doneResizing() {
   var navbar = document.getElementById('navbar').offsetHeight;
 
   var mainPageHeight = body - navbar;
-  document.getElementById("mainPage").style.height = mainPageHeight;
-
-
-
-
+  document.getElementById("mainPage").style.height = (mainPageHeight).toString() + "px";
 
   //set the floating connect Button to the right position
   mapWidth = document.getElementById("map").offsetWidth;
   connectionStatusWidth = mapWidth * 2 / 3;
 
-  document.getElementById("connectionStatusBox").style.width = connectionStatusWidth;
-  document.getElementById("connectionStatusBox").style.right = mapWidth * 1 / 6;
-  document.getElementById("connectionStatusBox").style.bottom = mainPageHeight * 1 / 40;
+  connectionStatusBox = document.getElementById("connectionStatusBox");
 
-  buttonWidth = mapWidth / 10;
 
-  if (buttonWidth < 200 && buttonWidth > 132) {
-    document.getElementById("quickConnectButton").style.width = buttonWidth;
-    document.getElementById("quickConnectButton").style.marginLeft = connectionStatusWidth - buttonWidth - connectionStatusWidth / 60;
-    document.getElementById("connectionMessage").style.maxWidth = connectionStatusWidth - buttonWidth - connectionStatusWidth / 30;
-  }
-  else if (buttonWidth < 132) {
-    document.getElementById("quickConnectButton").style.width = 132;
-    document.getElementById("quickConnectButton").style.marginLeft = connectionStatusWidth - 132 - connectionStatusWidth / 60;
-    document.getElementById("connectionMessage").style.maxWidth = connectionStatusWidth - 132 - connectionStatusWidth / 30;
+  if (mapWidth > 575) {
+    connectionStatusBox.style.width = (connectionStatusWidth).toString() + "px";
+    connectionStatusBox.style.right = (mapWidth * 1 / 6).toString() + "px";
+    connectionStatusBox.style.bottom = (mainPageHeight * 1 / 40).toString() + "px";
   }
   else {
-    document.getElementById("quickConnectButton").style.width = 200;
-    document.getElementById("quickConnectButton").style.marginLeft = connectionStatusWidth - 200 - connectionStatusWidth / 80;
-    document.getElementById("connectionMessage").style.maxWidth = connectionStatusWidth - 200 - connectionStatusWidth / 40;
+    connectionStatusBox.style.width = (mapWidth).toString() + "px";
+    connectionStatusBox.style.right = "15px";
+    connectionStatusBox.style.bottom = (mainPageHeight * 1 / 40).toString() + "px";
   }
 
-  //style svg
-  document.getElementById("worldSVG").style.height = mainPageHeight;
-  document.getElementById("worldSVG").style.width = mapWidth;
+  connectionStatus = document.getElementById("connectionStatus");
+  connectionStatusHight = connectionStatus.offsetHeight;
+  if (connectionStatusHight > 63) {
+    connectionStatus.style.paddingTop = "0px"
+  }
+  else if (connectionStatusHight == 60) {
+    connectionStatus.style.paddingTop = "15px"
+  }
 }
-
-
-function resizeMap() {
-
-}
-
 
 
 /*
