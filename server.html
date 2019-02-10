@@ -47,15 +47,16 @@
         <input class="form-control" type="search" placeholder="Search" aria-label="Search"
           style="border-radius: 0px;   ">
       </form>
-      <div class="dropdown-divider"></div>
-      <div style="margin: auto; margin-top: 6px; width: 97%">
-        <p data-toggle="collapse" data-target="#specialServers" aria-expanded="false" style="cursor: pointer;">
-          <a class="material-icons align-middle" id="specialServerIcon">keyboard_arrow_right</a>
-          <a style="vertical-align:middle">Special Servers</a>
 
-        </p>
+      <div class="dropdown-divider"></div>
+
+      <div style="width: 100%; cursor: pointer; margin-bottom:0.6rem;" data-toggle="collapse"
+        data-target="#specialServers" aria-expanded="false">
+
+        <a class="material-icons" id="specialServerIcon" style="vertical-align: middle">keyboard_arrow_right</a>
+        <a style="vertical-align: middle">Special Servers</a>
         <div class="collapse" id="specialServers">
-          <table class="table table-borderless hover">
+          <table style="margin-top: 6px;" class="table table-borderless hover">
             <tbody>
               <tr style="cursor: pointer;">
                 <td class="align-middle"> <img src="icons/p2p.png" style="width:1.5em;" /></td>
@@ -336,13 +337,12 @@
 
   <div class="dropdown-divider"></div>
 
-  <div style="margin: auto; margin-top: 6px; width: 97%">
-    <p data-toggle="collapse" data-target="#allCountries" style="cursor: pointer;">
-      <a class="material-icons align-middle" id="allCountriesIcon">keyboard_arrow_right</a>
-      <a style="vertical-align: middle">All Countries </a>
-    </p>
+  <div data-toggle="collapse" data-target="#allCountries" style="cursor: pointer; width: 100%; margin-bottom:0.6rem;">
+
+    <a class="material-icons align-middle" id="allCountriesIcon">keyboard_arrow_right</a>
+    <a style="vertical-align: middle">All Countries </a>
     <div class="collapse" id="allCountries">
-      <table class="table table-borderless">
+      <table style="margin-top: 6px;" class="table table-borderless">
         <tbody>
           <tr style="cursor: pointer;">
             <td class="align-middle"> <span class="flag-icon flag-icon-de"
@@ -484,6 +484,7 @@
       </table>
     </div>
   </div>
+
   </div>
 
   <!--right side-->
