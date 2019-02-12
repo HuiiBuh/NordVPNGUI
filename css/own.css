@@ -1,32 +1,36 @@
 #navbar a:link {
-  color: white;
+    color: white;
 }
 
 #navbar a:visited {
-  color: white
+    color: white
 }
 
 .custom-control-input:checked ~ .custom-control-label::before {
-  color: #fff;
-  border-color: #145079;
-  background-color: #145079;
+    color: #fff;
+    border-color: #145079;
+    background-color: #145079;
 }
+
 
 .floatingOver {
-  z-index: 1000;
-  background-color: white;
-  position: absolute;
-  height: 80px;
+    z-index: 1000;
+    background-color: white;
+    position: absolute;
+    height: 80px;
+    /*initialize at approximately the right position gets specified in js*/
+    right: 20px;
+    bottom: 20px;
 }
 
-.btn{
-  border-radius: 0px;
-  border-color: #14517900;
+.btn {
+    border-radius: 0;
+    border-color: #14517900;
 }
 
 #quickConnectButton {
-  height: 40px;
-  margin-top: 20px;
-  border-radius: 0px;
-  background-color: #145079;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 0;
+    background-color: #145079;
 }
