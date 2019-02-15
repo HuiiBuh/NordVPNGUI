@@ -1,36 +1,35 @@
 #navbar a:link {
     color: white;
-}
-
-#navbar a:visited {
-    color: white
-}
-
-.custom-control-input:checked ~ .custom-control-label::before {
+  }
+  
+  #navbar a:visited {
+    color: white;
+  }
+  
+  .custom-control-input:checked ~ .custom-control-label::before {
     color: #fff;
     border-color: #145079;
     background-color: #145079;
-}
-
-
-.floatingOver {
+  }
+  
+  .floatingOver {
     z-index: 1000;
     background-color: white;
     position: absolute;
-    height: 80px;
-    /*initialize at approximately the right position gets specified in js*/
-    right: 20px;
+    height: 90px;
+    right: 50px;
     bottom: 20px;
-}
-
-.btn {
+  }
+  
+  .btn {
     border-radius: 0;
     border-color: #14517900;
-}
-
-#quickConnectButton {
-    height: 40px;
-    margin-top: 20px;
+  }
+  
+  #quickConnectButton {
+    height: 45px;
+    margin-top: 22.5px;
     border-radius: 0;
+    float: right;
     background-color: #145079;
-}
+  }

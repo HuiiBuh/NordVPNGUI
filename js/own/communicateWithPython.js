@@ -1,15 +1,25 @@
-async function quickConnectButton() {
-    if (document.getElementById("quickConnectButton").innerHTML.indexOf("Quick Connect") != -1) {
-        if (await eel.quick_connect()) {
-            await checkConnectionStatus();
-            await checkStatus();
-        } else {
-            alert("Something went wrong in quickconnect.")
-        }
-    } else {
-        await eel.disconnect();
+async function quickConnect() {
+    let temp = document.getElementById("quickConnectButton");
+    temp.onclick = null;
+    if (await eel.quick_connect()) {
+        temp.onclick = disconnect;
         await checkConnectionStatus();
         await checkStatus();
+    } else {
+        alert("Could not quickConnect.")
+    }
+}
+
+async function disconnect() {
+    let temp = document.getElementById("quickConnectButton");
+    temp.onclick = null;
+    if (await eel.disconnect()) {
+        temp.onclick = quickConnect;
+        await checkConnectionStatus();
+        await checkStatus();
+    }
+    else{
+        alert("Could not disconnect")
     }
 }
 
@@ -26,7 +36,7 @@ async function checkConnectionStatus() {
         document.getElementById("connectionMessage").style.color = "red";
         document.getElementById("quickConnectButton").innerHTML = "Quick Connect";
     }
-    else{
+    else {
         alert("Something went wrong in checkConnectionStatus")
     }
     connectionStatusOld = connectionStatus;
