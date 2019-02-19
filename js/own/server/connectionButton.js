@@ -3,22 +3,19 @@
 //misserfolg zurückbekommen hat.
 
 class ConnectionButton {
-  constructor() {
-//    this.state = getStateFromPython();
-//    this.detailedState = getDetailedStateFromPython();
-//    this.oldDetailedState = null;
+  constructor(detailedState, state) {
+    this.state = state;
+    this.detailedState = detailedState;
+    this.oldDetailedState = null;
   }
 
   getState() {
-    return this.state;
+    return [this.state, this.detailedState];
   }
 
-  async getStateFromPython() {
-    return await eel.get_connection_status()();
-  }
-
-  async getDetailedStateFromPython() {
-    return await eel.get_status()();
+  setState(detailedState, state){
+    this.detailedState = detailedState;
+    this.state = state;
   }
 
   // 0 = connection status
@@ -31,18 +28,18 @@ class ConnectionButton {
   // 7 = send data
   // 8 = duration of the connection
 
-  setStateUI(detailedState, oldDetailedState) {
+  setStateUI() {
     //Set connected message
-    if (detailedState !== 0 && !detailedState.includes("Disconnected") && detailedState !== oldDetailedState) {
-      oldDetailedState = detailedState;
+    if (this.detailedState !== 0 && !this.detailedState.includes("Disconnected") && this.detailedState !== this.oldDetailedState) {
+      this.oldDetailedState = this.detailedState;
       document.getElementById("connectionMessage").innerHTML = "&#8226; Connected";
       document.getElementById("connectionMessage").style.color = "green";
       document.getElementById("quickConnectButton").innerHTML = "Disconnect";
-      document.getElementById("detailedConnectionMessage").innerHTML = "Connected to " + status[2] + "(" + status[4] + ")";
+      document.getElementById("detailedConnectionMessage").innerHTML = "Connected to " + this.detailedState[2] + " (" + this.detailedState[4] + ")";
     }
     //set disconnected message
-    else if (detailedState.includes("Disconnected") && detailedState !== oldDetailedState) {
-      oldDetailedState = detailedState;
+    else if (this.detailedState.includes("Disconnected") && this.detailedState !== this.oldDetailedState) {
+      this.oldDetailedState = this.detailedState;
       document.getElementById("connectionMessage").innerHTML = "&#8226; Disconnected";
       document.getElementById("connectionMessage").style.color = "red";
       document.getElementById("quickConnectButton").innerHTML = "Quick Connect";
@@ -56,11 +53,13 @@ class ConnectionButton {
 
   async quickConnect() {
     //ToDo direkt auf connecting wechseln und aufpassen, dass der connect Button keine Funktion mehr hat
+    document.getElementById("quickConnectButton").onclick = "connectButton.disconnect()";
     return await eel.quick_connect()();
   }
 
   async disconnect() {
     //ToDo direkt auf disconnecting wechseln und aufpassen, dass der connect Button keine Funktion mehr hat
+    document.getElementById("quickConnectButton").onclick = "connectButton.quickConnect()";
     return await eel.disconnect()();
   }
 }
