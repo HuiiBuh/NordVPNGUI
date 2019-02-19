@@ -14,15 +14,23 @@
   <link rel="stylesheet" href="css/own.css">
   <link rel="stylesheet" href="css/materiel-icons.css">
 
-  <!--JavaScript-->
+  <!--JavaScript for page-->
   <script type="text/javascript" src="js/libary/bootstrap/jquery-3.3.1.slim.min.js"></script>
   <script type="text/javascript" src="js/libary/bootstrap/popper.min.js"></script>
   <script type="text/javascript" src="js/libary/bootstrap/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/own/settings.js"></script>
+
+  <!--Initialize all elements-->
+  <script type="text/javascript" src="js/own/settings/initialize.js"></script>
+
+    <!--Add all classes for the elements-->
+    <script type="text/javascript" src="js/own/settings/dns.js"></script>
+    <script type="text/javascript" src="js/own/settings/slider.js"></script>
+    <script type="text/javascript" src="js/own/settings/radio.js"></script>
+    <script type="text/javascript" src="js/own/settings/main.js"></script>
+
 
   <!--eel-->
-  <script type="text/javascript" src="/eel.js"></script>
-  <script type="text/javascript" src="js/own/communicateWithPython.js"></script>
+  <script type="text/java script" src="/eel.js"></script>
 
 
   <style>
@@ -312,11 +320,13 @@
         </td>
         <td class="align-middle">
           <div class="form-check form-check-inline">
-            <input class="form-check-input" style="cursor: pointer;" type="radio" name="inlineRadioOptions" id="TCP" value="TCP">
+            <input class="form-check-input" style="cursor: pointer;" type="radio" name="inlineRadioOptions" id="TCP"
+              value="TCP">
             <label class="form-check-label" for="TCP">TCP</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" style="cursor: pointer;" name="inlineRadioOptions" id="UDP" value="UDP">
+            <input class="form-check-input" type="radio" style="cursor: pointer;" name="inlineRadioOptions" id="UDP"
+              value="UDP">
             <label class="form-check-label" for="UDP">UDP</label>
           </div>
         </td>
@@ -341,7 +351,7 @@
                   <div class="modal-body">
                     <div class="row">
                       <div class="col">
-                        <input onkeydown="return checkKey(event)" class="form-control" type="text" placeholder="DNS"
+                        <input onkeydown="return checkKeyDNS(event)" class="form-control" type="text" placeholder="DNS"
                           id="setcustomDNS">
                       </div>
                     </div>
@@ -349,7 +359,7 @@
                   <div class="modal-footer">
                     <button type="button" data-dismiss="modal" class="btn btn-primary"
                       style="background-color: #145079;">Cancel</button>
-                    <button type="button" id="saveDNS" onClick="saveDNS()" class="btn btn-primary"
+                    <button type="button" id="saveDNS" onClick="dns.saveDNS(dns.getDNSFromUI())" class="btn btn-primary"
                       style="background-color: #145079;">Save
                       changes</button>
                   </div>
@@ -361,8 +371,8 @@
         </td>
         <td class="align-middle">
           <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input" id="customDNSSlider">
-            <label class="custom-control-label" for="customDNSSlider"></label>
+            <input type="checkbox" class="custom-control-input" id="customDNS">
+            <label class="custom-control-label" for="customDNS"></label>
           </div>
         </td>
       </tr>
