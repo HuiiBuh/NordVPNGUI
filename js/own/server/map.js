@@ -2,20 +2,21 @@ class Map {
   constructor(id) {
     this.id = id;
     this.polygonSeries = null;
+    this.chart = null;
   }
 
   createMyMap() {
     // Create map instance
-    var chart = am4core.create(this.id, am4maps.MapChart);
+    this.chart = am4core.create(this.id, am4maps.MapChart);
 
     // Set map definition
-    chart.geodata = am4geodata_worldLow;
+    this.chart.geodata = am4geodata_worldLow;
 
     // Set projection
-    chart.projection = new am4maps.projections.Miller();
+    this.chart.projection = new am4maps.projections.Miller();
 
     // Create map polygon series
-    this.polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+    this.polygonSeries = this.chart.series.push(new am4maps.MapPolygonSeries());
     this.polygonSeries.exclude = ["AQ"];
 
     // Make map load polygon (like country names) data from GeoJSON
@@ -45,13 +46,13 @@ class Map {
     polygonTemplate.propertyFields.fill = "fill";
 
     // Zoom control
-    chart.zoomControl = new am4maps.ZoomControl();
+    this.chart.zoomControl = new am4maps.ZoomControl();
     var homeButton = new am4core.Button();
-    chart.zoomControl.align = "right";
-    chart.zoomControl.valign = "top";
+    this.chart.zoomControl.align = "right";
+    this.chart.zoomControl.valign = "top";
 
     homeButton.events.on("hit", function () {
-      chart.goHome();
+      this.chart.goHome();
     });
 
     homeButton.icon = new am4core.Sprite();
@@ -59,8 +60,8 @@ class Map {
     homeButton.width = 20;
     homeButton.icon.path = "M16,8 L14,8 L14,16 L10,16 L10,10 L6,10 L6,16 L2,16 L2,8 L0,8 L8,0 L16,8 Z M16,8";
     homeButton.marginBottom = 10;
-    homeButton.parent = chart.zoomControl;
-    homeButton.insertBefore(chart.zoomControl.plusButton);
+    homeButton.parent = this.chart.zoomControl;
+    homeButton.insertBefore(this.chart.zoomControl.plusButton);
   }
 
 
