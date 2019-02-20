@@ -13,7 +13,7 @@ function updateStatus(detailedState, state) {
 }
 
 
-window.onload = function () {
+window.onload = async function () {
 
     //create a new ConnectionButton (ToDo position the button)
 
@@ -54,6 +54,10 @@ window.onload = function () {
     }];
 
     am4map.setCustomData(json);
+
+
+    var data = await eel.return_cities()();
+    console.log(data);
 
     var array = ["s", "t", "g", "sf", "tg", "gh", "sd", "th", "gk", "vs", "et", "gt", "sd", "tw", "gg"]
 
