@@ -1,6 +1,7 @@
 var connectButton;
 
-//eel.expose(updateStatus);
+eel.expose(updateStatus);
+
 function updateStatus(detailedState, state) {
     if (typeof connectButton == "undefined") {
         connectButton = new ConnectionButton(detailedState, state);
@@ -65,4 +66,9 @@ window.onload = async function () {
         array[i] = new Country("Germany", ["Saab", "Volvo", "BMW"], "de", "germany");
         array[i].createElement();
     }
+}
+
+
+function callResetPosition() {
+    am4map.resetPosition();
 }
