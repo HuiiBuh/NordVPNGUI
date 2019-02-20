@@ -28,6 +28,8 @@
   <script src="js/libary/am4charts/core.js"></script>
   <script src="js/libary/am4charts/maps.js"></script>
   <script src="js/libary/am4charts/worldLow.js"></script>
+  <script src="js/own/server/contextMenu.js"></script>
+
 
   <!--Position and initialize all elements-->
   <script type="text/javascript" src="js/own/server/initialize.js"></script>
@@ -256,6 +258,14 @@
       </div>
     </div>
   </div>
+
+  <!--context menu___________________________-->
+  <div class="menu" onclick="am4map.resetPosition()">
+    <ul class="menu-options">
+      <li class="menu-option centerContext">Back</li>
+    </ul>
+  </div>
+
 </body>
 
 </html>

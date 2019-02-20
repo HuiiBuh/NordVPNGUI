@@ -1,6 +1,6 @@
 var connectButton;
 
-eel.expose(updateStatus);
+//eel.expose(updateStatus);
 function updateStatus(detailedState, state) {
     if (typeof connectButton == "undefined") {
         connectButton = new ConnectionButton(detailedState, state);
@@ -15,11 +15,11 @@ function updateStatus(detailedState, state) {
 
 window.onload = function () {
 
-    //create a new ConnectionButton (ToDo position the button)
-
     //create a new Map
     am4map = new Map("map");
     am4map.createMyMap();
+
+    contextmenu();
 
     json = [{
         "id": "US",
