@@ -17,7 +17,7 @@ function contextmenu() {
     if (menuVisible) toggleMenu("hide");
   });
 
-  window.addEventListener("contextmenu", e => {
+  document.getElementById("map").addEventListener("contextmenu", e => {
     e.preventDefault();
     const origin = {
       left: e.pageX,
