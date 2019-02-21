@@ -13,7 +13,7 @@ function updateStatus(detailedState, state) {
 }
 
 
-window.onload = function () {
+window.onload = async function () {
 
     //create a new ConnectionButton (ToDo position the button)
 
@@ -31,17 +31,17 @@ window.onload = function () {
         "name": "France",
         "value": 6,
         "fill": am4core.color("#145079")
-    }, {}, {
+    }, {
         "id": "BR",
         "name": "Brasilien",
         "value": 2,
         "fill": am4core.color("#145079")
-    }, {}, {
+    }, {
         "id": "DE",
         "value": 2,
         "name": "Germany",
         "fill": am4core.color("#145079")
-    }, {}, {
+    }, {
         "id": "GB",
         "value": 3,
         "name": "Großbritannien",
@@ -54,6 +54,11 @@ window.onload = function () {
     }];
 
     am4map.setCustomData(json);
+
+
+
+    var countries = await eel.return_cities()();
+    
 
     var array = ["s", "t", "g", "sf", "tg", "gh", "sd", "th", "gk", "vs", "et", "gt", "sd", "tw", "gg"]
 
