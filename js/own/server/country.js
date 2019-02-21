@@ -23,7 +23,7 @@ class Country {
     var countrySpan = document.createElement("span");
     countrySpan.classList.add("align-middle");
     countrySpan.style.paddingBottom = "0.1rem";
-    countrySpan.innerHTML = "&nbsp;&nbsp;Germany";
+    countrySpan.innerHTML = "&nbsp;&nbsp;" + this.countryName;
     countryTd.append(countrySpan);
 
     var dropTd = document.createElement("td");

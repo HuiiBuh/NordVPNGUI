@@ -60,17 +60,19 @@ window.onload = async function () {
     am4map.setCustomData(json);
 
 
-    var countries = await eel.return_cities()();
+    var countriesJSON = await eel.return_cities()();
+    var countriesObject = JSON.parse(countriesJSON)
+    //console.log(countriesObject)
 
+    for ( let country in countriesObject)
+    {
+        var temp = [country];
+        console.log(temp[0]);
+        new Country(country, countriesObject[country], "de", country).createElement();
 
-
-    var array = ["s", "t", "g", "sf", "tg", "gh", "sd", "th", "gk", "vs", "et", "gt", "sd", "tw", "gg"]
-
-    for (i = 0; i < array.length; ++i) {
-        array[i] = new Country("Germany", ["Saab", "Volvo", "BMW"], "de", "germany");
-        array[i].createElement();
     }
 }
+
 
 
 function callResetPosition() {
