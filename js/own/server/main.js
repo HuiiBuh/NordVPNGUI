@@ -1,6 +1,7 @@
 var connectButton;
 
 eel.expose(updateStatus);
+
 function updateStatus(detailedState, state) {
     if (typeof connectButton == "undefined") {
         connectButton = new ConnectionButton(detailedState, state);
@@ -17,9 +18,12 @@ window.onload = async function () {
 
     //create a new ConnectionButton (ToDo position the button)
 
+
     //create a new Map
     am4map = new Map("map");
     am4map.createMyMap();
+
+    contextmenu();
 
     json = [{
         "id": "US",
@@ -56,9 +60,9 @@ window.onload = async function () {
     am4map.setCustomData(json);
 
 
-
     var countries = await eel.return_cities()();
-    
+
+
 
     var array = ["s", "t", "g", "sf", "tg", "gh", "sd", "th", "gk", "vs", "et", "gt", "sd", "tw", "gg"]
 
@@ -66,4 +70,9 @@ window.onload = async function () {
         array[i] = new Country("Germany", ["Saab", "Volvo", "BMW"], "de", "germany");
         array[i].createElement();
     }
+}
+
+
+function callResetPosition() {
+    am4map.resetPosition();
 }
