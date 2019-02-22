@@ -35,3 +35,8 @@ $(window).resize(function () {
     clearTimeout(resizeId);
     resizeId = setTimeout(positionElements, 5);
 });
+
+
+function callResetPosition() {
+    am4map.resetPosition();
+}
