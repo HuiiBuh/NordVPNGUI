@@ -23,12 +23,13 @@ class Map {
         this.polygonSeries.useGeodata = true;
 
         // Configure series
-        var polygonTemplate = this.polygonSeries.mapPolygons.template;
+        let polygonTemplate = this.polygonSeries.mapPolygons.template;
         polygonTemplate.tooltipText = "{name}{category}";
         polygonTemplate.fill = am4core.color("#b4b4b4");
 
         this.polygonSeries.mapPolygons.template.events.on("hit", event => {
             console.log(event.target.dataItem.value);
+
         });
 
         this.polygonSeries.mapPolygons.template.events.on("over", event => {
@@ -40,23 +41,18 @@ class Map {
 
 
         // Create hover state and set alternative fill color
-        var hs = polygonTemplate.states.create("hover");
+        let hs = polygonTemplate.states.create("hover");
         hs.properties.fill = am4core.color("#0a283b");
 
         polygonTemplate.propertyFields.fill = "fill";
 
         // Zoom control
         this.chart.zoomControl = new am4maps.ZoomControl();
-        var homeButton = new am4core.Button();
+        let homeButton = new am4core.Button();
         this.chart.zoomControl.align = "right";
         this.chart.zoomControl.valign = "top";
 
-
-
-
         homeButton.events.on("hit", callResetPosition);
-
-
 
         homeButton.icon = new am4core.Sprite();
         homeButton.padding(7, 5, 7, 5);
@@ -66,7 +62,7 @@ class Map {
         homeButton.parent = this.chart.zoomControl;
         homeButton.insertBefore(this.chart.zoomControl.plusButton);
 
-
+        document.getElementById("map").style.backgroundColor = "#bbd2d8";
     }
 
     resetPosition() {
@@ -75,47 +71,5 @@ class Map {
 
     setCustomData(jsonData) {
         this.polygonSeries.data = jsonData;
-
-
-        /* Example Data
-            // Add some data
-            polygonSeries.data = [{
-              "id": "US",
-              "name": "United States",
-              "value": 1,
-              "fill": am4core.color("#145079"),
-            }, {
-              "id": "FR",
-              "name": "France",
-              "value": 6,
-              "fill": am4core.color("#145079")
-            }, {
-            }, {
-              "id": "BR",
-              "name": "Brasilien",
-              "value": 2,
-              "fill": am4core.color("#145079")
-            }, {
-            }, {
-              "id": "DE",
-              "value": 2,
-              "name": "Germany",
-              "fill": am4core.color("#145079")
-            }, {
-            }, {
-              "id": "GB",
-              "value": 3,
-              "name": "Großbritannien",
-              "fill": am4core.color("#145079")
-            }, {
-              "id": "RU",
-              "value": 4,
-              "name": "Russland",
-              "fill": am4core.color("#145079")
-            }];
-
-            */
     }
-
-
 }

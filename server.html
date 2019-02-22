@@ -32,6 +32,8 @@
 
 
   <!--Position and initialize all elements-->
+  <script type="text/javascript" src="js/own/server/ISOcountry.js"></script>
+  <script type="text/javascript" src="js/own/server/countryISO.js"></script>
   <script type="text/javascript" src="js/own/server/initialize.js"></script>
   <script type="text/javascript" src="js/own/server/positionElements.js"></script>
 
@@ -50,221 +52,223 @@
 </head>
 
 <body style="height:100vh" id="body">
-  <!--Navbar___________________________-->
-  <nav class="navbar" style="background-color: #145079;" id="navbar">
-    <a class="navbar-brand" href="#"><img alt="NordVPN" src="icons/nordvpn_nav.png" style="width:2em;" /></a>
-    <a class="nav-link" href="#">Server</a>
-    <a class="nav-link" href="settings.html">Settings</a>
-  </nav>
+<!--Navbar___________________________-->
+<nav class="navbar" style="background-color: #145079;" id="navbar">
+  <a class="navbar-brand" href="#"><img alt="NordVPN" src="icons/nordvpn_nav.png" style="width:2em;"/></a>
+  <a class="nav-link" href="#">Server</a>
+  <a class="nav-link" href="settings.html">Settings</a>
+</nav>
 
-  <div class="row no-gutters" id="mainPage">
-    <!--Left Side___________________________-->
-    <div class="col-4" style="max-height: 100%; overflow: auto;">
-      <form style="margin-right: auto; margin-left: auto; margin-top: 6px; width: 97%">
-        <input class="form-control" type="search" placeholder="Search" aria-label="Search" style="border-radius: 0;   ">
-      </form>
+<div class="row no-gutters" id="mainPage">
+  <!--Left Side___________________________-->
+  <div class="col-4" style="max-height: 100%; overflow: auto;">
+    <form style="margin-right: auto; margin-left: auto; margin-top: 6px; width: 97%">
+      <input class="form-control" type="search" placeholder="Search" aria-label="Search" style="border-radius: 0;   ">
+    </form>
 
-      <div class="dropdown-divider"></div>
+    <div class="dropdown-divider"></div>
 
-      <div style="width: 100%; cursor: pointer; margin-bottom:0.6rem;" data-toggle="collapse"
-        data-target="#specialServers" aria-expanded="false">
-        <a class="material-icons" id="specialServerIcon" style="vertical-align: middle">keyboard_arrow_right</a>
-        <a style="vertical-align: middle">Special Servers</a>
-      </div>
-
-      <div class="collapse" id="specialServers" style="margin-top: 6px;">
-        <table class="table table-borderless hover">
-          <tbody>
-
-            <tr style="cursor: pointer;">
-              <td style="padding-top: 0.75rem;"><img alt="P2P" style="width:1.5em;" src="icons/p2p.png" /></td>
-              <td>P2P</td>
-              <td style="padding-top: 0.85rem;">
-                <div class="dropleft">
-                  <i class="material-icons" style="float:right" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    more_horiz
-                  </i>
-                  <div class="dropdown-menu">
-                    <table class=" table table-borderless hover">
-                      <tbody>
-                        <tr style="cursor: pointer;">
-                          <td class="align-middle">Germany</td>
-                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
-                        </tr>
-                        <tr style="cursor: pointer;">
-                          <td class="align-middle">England</td>
-                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
-                        </tr>
-                        <tr style="cursor: pointer;">
-                          <td class="align-middle">USA</td>
-                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
-                        </tr>
-                        <tr style="cursor: pointer;">
-                          <td class="align-middle">Italien</td>
-                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </td>
-            </tr>
-
-            <tr style="cursor: pointer;">
-              <td style="padding-top: 0.75rem;"><img alt="Onion" style="width:1.5em;" src="icons/onion.png" /></td>
-              <td>Onion Over VPN</td>
-              <td style="padding-top: 0.85rem;">
-                <div class="dropleft">
-                  <i class="material-icons" style="float:right" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    more_horiz
-                  </i>
-                  <div class="dropdown-menu">
-                    <table class="table table-borderless hover">
-                      <tbody>
-                        <tr style="cursor: pointer;">
-                          <td class="align-middle">Germany</td>
-                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
-                        </tr>
-                        <tr style="cursor: pointer;">
-                          <td class="align-middle">England</td>
-                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
-                        </tr>
-                        <tr style="cursor: pointer;">
-                          <td class="align-middle">USA</td>
-                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
-                        </tr>
-                        <tr style="cursor: pointer;">
-                          <td class="align-middle">Italien</td>
-                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </td>
-            </tr>
-
-            <tr style="cursor: pointer;">
-              <td style="padding-top: 0.75rem;"><img alt="VPN" style="width:1.5em;" src="icons/vpn.png" /></td>
-              <td>Double VPN</td>
-              <td style="padding-top: 0.85rem;">
-                <div class="dropleft">
-                  <i class="material-icons" style="float:right" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    more_horiz
-                  </i>
-                  <div class="dropdown-menu">
-                    <table class="table table-borderless hover">
-                      <tbody>
-                        <tr style="cursor: pointer;">
-                          <td class="align-middle">Germany</td>
-                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
-                        </tr>
-                        <tr style="cursor: pointer;">
-                          <td class="align-middle">England</td>
-                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
-                        </tr>
-                        <tr style="cursor: pointer;">
-                          <td class="align-middle">USA</td>
-                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
-                        </tr>
-                        <tr style="cursor: pointer;">
-                          <td class="align-middle">Italien</td>
-                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </td>
-            </tr>
-
-            <tr style="cursor: pointer;">
-              <td style="padding-top: 0.75rem;"><img alt="Home" src="icons/home.png" style="width:1.5em;" /></td>
-              <td>Dedicated IP</td>
-              <td style="padding-top: 0.75rem;">
-                <div class="dropleft">
-                  <i class="material-icons" style="float:right" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    more_horiz
-                  </i>
-                  <div class="dropdown-menu">
-                    <table class="table table-borderless hover">
-                      <tbody>
-                        <tr style="cursor: pointer;">
-                          <td class="align-middle">Germany</td>
-                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
-                        </tr>
-                        <tr style="cursor: pointer;">
-                          <td class="align-middle">England</td>
-                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
-                        </tr>
-                        <tr style="cursor: pointer;">
-                          <td class="align-middle">USA</td>
-                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
-                        </tr>
-                        <tr style="cursor: pointer;">
-                          <td class="align-middle">Italien</td>
-                          <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="dropdown-divider"></div>
-
-      <div data-toggle="collapse" data-target="#allCountries"
-        style="cursor: pointer; width: 100%; margin-bottom:0.6rem;">
-        <a class="material-icons align-middle" id="allCountriesIcon">keyboard_arrow_right</a>
-        <a style="vertical-align: middle">All Countries </a>
-      </div>
-      <div class="collapse" id="allCountries" style="margin-top: 6px;">
-        <table class="table table-borderless">
-          <tbody id="allCountriesTabelBody">
-            <!--Countries___________________________-->
-          </tbody>
-        </table>
-      </div>
+    <div style="width: 100%; cursor: pointer; margin-bottom:0.6rem;" data-toggle="collapse"
+         data-target="#specialServers" aria-expanded="false">
+      <a class="material-icons" id="specialServerIcon" style="vertical-align: middle">keyboard_arrow_right</a>
+      <a style="vertical-align: middle">Special Servers</a>
     </div>
 
-    <!--right side___________________________-->
-    <div class="col-8" style="background-color: #bbd2d8; max-height: 100%;" id="map">
+    <div class="collapse" id="specialServers" style="margin-top: 6px;">
+      <table class="table table-borderless hover">
+        <tbody>
 
+
+        <tr style="cursor: pointer;">
+          <td style="width:1.5em;"><img alt="P2P" style="width:1.5em;" src="icons/p2p.png"/></td>
+          <td>P2P</td>
+          <td>
+            <div class="dropleft">
+              <i class="material-icons" style="float:right" data-toggle="dropdown" aria-haspopup="true"
+                 aria-expanded="false">
+                more_horiz
+              </i>
+              <div class="dropdown-menu">
+                <table class=" table table-borderless hover">
+                  <tbody>
+                  <tr style="cursor: pointer;">
+                    <td class="align-middle">Germany</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr style="cursor: pointer;">
+                    <td class="align-middle">England</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr style="cursor: pointer;">
+                    <td class="align-middle">USA</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr style="cursor: pointer;">
+                    <td class="align-middle">Italien</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr style="cursor: pointer;">
+          <td style="width:1.5em;"><img alt="Onion" style="width:1.5em;" src="icons/onion.png"/></td>
+          <td>Onion Over VPN</td>
+          <td>
+            <div class="dropleft">
+              <i class="material-icons" style="float:right" data-toggle="dropdown" aria-haspopup="true"
+                 aria-expanded="false">
+                more_horiz
+              </i>
+              <div class="dropdown-menu">
+                <table class="table table-borderless hover">
+                  <tbody>
+                  <tr style="cursor: pointer;">
+                    <td class="align-middle">Germany</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr style="cursor: pointer;">
+                    <td class="align-middle">England</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr style="cursor: pointer;">
+                    <td class="align-middle">USA</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr style="cursor: pointer;">
+                    <td class="align-middle">Italien</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr style="cursor: pointer;">
+          <td style="width:1.5em;"><img alt="VPN" style="width:1.5em;" src="icons/vpn.png"/></td>
+          <td>Double VPN</td>
+          <td>
+            <div class="dropleft">
+              <i class="material-icons" style="float:right" data-toggle="dropdown" aria-haspopup="true"
+                 aria-expanded="false">
+                more_horiz
+              </i>
+              <div class="dropdown-menu">
+                <table class="table table-borderless hover">
+                  <tbody>
+                  <tr style="cursor: pointer;">
+                    <td class="align-middle">Germany</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr style="cursor: pointer;">
+                    <td class="align-middle">England</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr style="cursor: pointer;">
+                    <td class="align-middle">USA</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr style="cursor: pointer;">
+                    <td class="align-middle">Italien</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr style="cursor: pointer;">
+          <td style="width:1.5rem;"><img alt="Home" src="icons/home.png" style="width:100%"/></td>
+          <td>Dedicated IP</td>
+          <td>
+            <div class="dropleft">
+              <i class="material-icons" style="float:right" data-toggle="dropdown" aria-haspopup="true"
+                 aria-expanded="false">
+                more_horiz
+              </i>
+              <div class="dropdown-menu">
+                <table class="table table-borderless hover">
+                  <tbody>
+                  <tr style="cursor: pointer;">
+                    <td class="align-middle">Germany</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr style="cursor: pointer;">
+                    <td class="align-middle">England</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr style="cursor: pointer;">
+                    <td class="align-middle">USA</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  <tr style="cursor: pointer;">
+                    <td class="align-middle">Italien</td>
+                    <td><a class="material-icons" href="#" style="color: #145079; float: right;">cached</a></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
     </div>
 
-    <!--floating button___________________________-->
-    <div class="row floatingOver" id="connectionStatusBox">
-      <div class="container">
-        <div class="row" style="padding-right:15px; padding-left: 15px;">
-          <div class="col-7" id="connectionStatus" style="padding: 0; margin-top: 21px;">
-            <p class="font-weight-normal" style="margin:0; color: red;" id="connectionMessage">&#8226;
-              Disconnected</p>
-            <p class="font-weight-bolder" style="margin:0;" id="detailedConnectionMessage">Pick Country, or
-              use quick connect</p>
-          </div>
-          <div class="col-5" id="col5" style="padding:0;">
-            <button class="btn btn-primary" id="quickConnectButton" onclick="connectButton.quickConnect()">Quick Connect
-            </button>
-          </div>
+    <div class="dropdown-divider" style="margin-bottom:6px;"></div>
+
+    <div data-toggle="collapse" data-target="#allCountries"
+         style="cursor: pointer; width: 100%; margin-bottom:0.6rem;">
+      <a class="material-icons align-middle" id="allCountriesIcon">keyboard_arrow_right</a>
+      <a style="vertical-align: middle">All Countries </a>
+    </div>
+    <div class="collapse" id="allCountries">
+      <table class="table table-borderless">
+        <tbody id="allCountriesTableBody">
+        <!--Countries___________________________-->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!--right side___________________________-->
+  <div class="col-8" style="max-height: 100%;" id="map">
+
+  </div>
+
+  <!--floating button___________________________-->
+  <div class="row floatingOver" id="connectionStatusBox">
+    <div class="container">
+      <div class="row" style="padding-right:15px; padding-left: 15px;">
+        <div class="col-7" id="connectionStatus" style="padding: 0; margin-top: 21px;">
+          <p class="font-weight-normal" style="margin:0; color: red;" id="connectionMessage">&#8226;
+            Disconnected</p>
+          <p class="font-weight-bolder" style="margin:0;" id="detailedConnectionMessage">Pick Country, or
+            use quick connect</p>
+        </div>
+        <div class="col-5" id="col5" style="padding:0;">
+          <button class="btn btn-primary" id="quickConnectButton" onclick="connectButton.quickConnect()">Quick Connect
+          </button>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <!--context menu___________________________-->
-  <div class="menu" onclick="am4map.resetPosition()">
-    <ul class="menu-options">
-      <li class="menu-option centerContext">HOME</li>
-    </ul>
-  </div>
+<!--context menu___________________________-->
+<div class="menu" onclick="am4map.resetPosition()">
+  <ul class="menu-options">
+    <li class="menu-option centerContext">HOME</li>
+  </ul>
+</div>
 
 </body>
 

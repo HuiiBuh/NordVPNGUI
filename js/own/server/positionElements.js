@@ -24,12 +24,12 @@ function positionElements() {
   }
 
 
-  connectionStatus = document.getElementById("connectionStatus");
-  temp = connectionStatus.clientHeight
-  if (temp > 48) {
-      connectionStatus.style.marginTop = ((90 - temp) / 2).toString() + "px";
+  let connectionStatus = document.getElementById("connectionStatus");
+  let statusHeight = connectionStatus.clientHeight;
+  if (statusHeight > 48) {
+      connectionStatus.style.marginTop = ((90 - statusHeight) / 2).toString() + "px";
   }
   else {
-      connectionStatus.style.marginTop = ((90 - temp) / 2).toString() + "px";
+      connectionStatus.style.marginTop = ((90 - statusHeight) / 2).toString() + "px";
   }
 }

@@ -5,11 +5,11 @@ eel.expose(updateStatus);
 function updateStatus(detailedState, state) {
     if (typeof connectButton == "undefined") {
         connectButton = new ConnectionButton(detailedState, state);
-        connectButton.setStateUI()
+        connectButton.setStateUI();
 
     } else {
-        connectButton.setState(detailedState, state)
-        connectButton.setStateUI()
+        connectButton.setState(detailedState, state);
+        connectButton.setStateUI();
     }
 }
 
@@ -18,14 +18,16 @@ window.onload = async function () {
 
     //create a new ConnectionButton (ToDo position the button)
 
+    let countriesJSON = await eel.return_cities()();
+    let countriesObject = JSON.parse(countriesJSON);
 
     //create a new Map
-    am4map = new Map("map");
+    let am4map = new Map("map");
     am4map.createMyMap();
 
     contextmenu();
 
-    json = [{
+    let json = [{
         "id": "US",
         "name": "United States",
         "value": 1,
@@ -59,20 +61,17 @@ window.onload = async function () {
 
     am4map.setCustomData(json);
 
+    let countryArray = new Array(countriesObject.length)
+    let i = 0;
 
-    var countriesJSON = await eel.return_cities()();
-    var countriesObject = JSON.parse(countriesJSON)
-    //console.log(countriesObject)
-
-    for ( let country in countriesObject)
-    {
-        var temp = [country];
-        console.log(temp[0]);
-        new Country(country, countriesObject[country], "de", country).createElement();
-
+    for (let country in countriesObject) {
+        if (!countryArray.hasOwnProperty(country))
+            countryArray.push(country)
+        new Country(country.replace(/_/g, " "), countriesObject[country], getIsoOfCountry(country.replace(/_/g, " ")),
+            country).createElement();
+        ++i;
     }
-}
-
+};
 
 
 function callResetPosition() {

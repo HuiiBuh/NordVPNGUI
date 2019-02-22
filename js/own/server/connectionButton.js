@@ -53,13 +53,13 @@ class ConnectionButton {
 
   async quickConnect() {
     //ToDo direkt auf connecting wechseln und aufpassen, dass der connect Button keine Funktion mehr hat
-    document.getElementById("quickConnectButton").onclick = "connectButton.disconnect()";
+    document.getElementById("quickConnectButton").onclick = connectButton.disconnect;
     return await eel.quick_connect()();
   }
 
   async disconnect() {
     //ToDo direkt auf disconnecting wechseln und aufpassen, dass der connect Button keine Funktion mehr hat
-    document.getElementById("quickConnectButton").onclick = "connectButton.quickConnect()";
+    document.getElementById("quickConnectButton").onclick = connectButton.quickConnect;
     return await eel.disconnect()();
   }
 }

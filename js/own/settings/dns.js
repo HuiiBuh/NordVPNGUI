@@ -61,8 +61,10 @@ class DNS {
       $("#DNSChange").modal("hide");
     }
     else{
-      document.getElementById("setcustomDNS").value = "";
-      document.getElementById("setcustomDNS").placeholder = "Not the right DNS format";
+
+      let customDNS = document.getElementById("setcustomDNS");
+      customDNS.value = "";
+      customDNS.placeholder = "Not the right DNS format";
     }
   }
 
