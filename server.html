@@ -42,13 +42,6 @@
   <script type="text/javascript" src="js/own/server/map.js"></script>
   <script type="text/javascript" src="js/own/server/main.js"></script>
   <script type="text/javascript" src="js/own/server/country.js"></script>
-
-  <style>
-    tr:hover {
-      background-color: #d1d1d1 !important;
-    }
-  </style>
-
 </head>
 
 <body style="height:100vh" id="body">
@@ -70,14 +63,21 @@
 
     <div style="width: 100%; cursor: pointer; margin-bottom:0.6rem;" data-toggle="collapse"
          data-target="#specialServers" aria-expanded="false">
-      <a class="material-icons" id="specialServerIcon" style="vertical-align: middle">keyboard_arrow_right</a>
-      <a style="vertical-align: middle">Special Servers</a>
+      <table>
+        <tbody>
+        <tr>
+          <td style="width: 3.7rem;"><a style="padding-left:0.65rem" class="material-icons align-middle"
+                                        id="specialServerIcon">keyboard_arrow_right</a></td>
+          <td><a style="vertical-align: middle">Special Servers</a></td>
+          <td></td>
+        </tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="collapse" id="specialServers" style="margin-top: 6px;">
-      <table class="table table-borderless hover">
+      <table class="table table-borderless customHighlighting">
         <tbody>
-
 
         <tr style="cursor: pointer;">
           <td style="width:1.5em;"><img alt="P2P" style="width:1.5em;" src="icons/p2p.png"/></td>
@@ -89,7 +89,7 @@
                 more_horiz
               </i>
               <div class="dropdown-menu">
-                <table class=" table table-borderless hover">
+                <table class=" table table-borderless">
                   <tbody>
                   <tr style="cursor: pointer;">
                     <td class="align-middle">Germany</td>
@@ -124,7 +124,7 @@
                 more_horiz
               </i>
               <div class="dropdown-menu">
-                <table class="table table-borderless hover">
+                <table class="table table-borderless">
                   <tbody>
                   <tr style="cursor: pointer;">
                     <td class="align-middle">Germany</td>
@@ -159,7 +159,7 @@
                 more_horiz
               </i>
               <div class="dropdown-menu">
-                <table class="table table-borderless hover">
+                <table class="table table-borderless">
                   <tbody>
                   <tr style="cursor: pointer;">
                     <td class="align-middle">Germany</td>
@@ -194,7 +194,7 @@
                 more_horiz
               </i>
               <div class="dropdown-menu">
-                <table class="table table-borderless hover">
+                <table class="table table-borderless">
                   <tbody>
                   <tr style="cursor: pointer;">
                     <td class="align-middle">Germany</td>
@@ -227,11 +227,19 @@
 
     <div data-toggle="collapse" data-target="#allCountries"
          style="cursor: pointer; width: 100%; margin-bottom:0.6rem;">
-      <a class="material-icons align-middle" id="allCountriesIcon">keyboard_arrow_right</a>
-      <a style="vertical-align: middle">All Countries </a>
+      <table>
+        <tbody>
+        <tr>
+          <td style="width: 3.7rem;"><a style="padding-left:0.65rem" class="material-icons align-middle"
+                                        id="allCountriesIcon">keyboard_arrow_right</a></td>
+          <td><a style="vertical-align: middle">All Countries </a></td>
+          <td></td>
+        </tr>
+        </tbody>
+      </table>
     </div>
     <div class="collapse" id="allCountries">
-      <table class="table table-borderless">
+      <table class="table table-borderless customHighlighting">
         <tbody id="allCountriesTableBody">
         <!--Countries___________________________-->
         </tbody>

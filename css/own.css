@@ -1,68 +1,74 @@
 #navbar a:link {
     color: white;
-  }
-  
-  #navbar a:visited {
+}
+
+#navbar a:visited {
     color: white;
-  }
-  
-  .custom-control-input:checked ~ .custom-control-label::before {
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
     color: #fff;
     border-color: #145079;
     background-color: #145079;
-  }
-  
-  .floatingOver {
+}
+
+.floatingOver {
     z-index: 1;
     background-color: white;
     position: absolute;
     height: 90px;
     right: 50px;
     bottom: 20px;
-  }
-  
-  .btn {
+}
+
+.btn {
     border-radius: 0;
     border-color: #14517900;
-  }
-  
-  #quickConnectButton {
+}
+
+#quickConnectButton {
     height: 45px;
     margin-top: 22.5px;
     border-radius: 0;
     float: right;
     background-color: #145079;
-  }
-
-
-.centerContext{
-  text-align: center;
 }
+
+table.customHighlighting tr:hover {
+    background-color: #d1d1d1 !important;
+}
+
+.centerContext {
+    text-align: center;
+}
+
 .menu {
-  width: 120px;
-  z-index: 2;
-  box-shadow: 0 4px 5px 3px rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 0.8);
-  position: fixed;
-  display: none;
-  transition: 0.2s display ease-in;
+    width: 120px;
+    z-index: 2;
+    box-shadow: 0 4px 5px 3px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    display: none;
+    transition: 0.2s display ease-in;
 }
 
 .menu-options {
-  list-style: none;
-  padding: 0;
-  z-index: 1;
-  margin:0;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    margin: 0;
 }
+
 .menu-option {
-  font-weight: 500;
-  z-index: 1;
-  font-size: 14px;
-  padding: 10px 20px 10px 20px;
-  cursor: pointer;
+    font-weight: 500;
+    z-index: 1;
+    font-size: 14px;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
 }
+
 .menu-option:hover {
-  background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 

@@ -3,11 +3,10 @@ class Country {
     constructor(countryName, cities, countryISO, connectName) {
         this.countryName = countryName;
         this.cities = cities;
-        if(countryISO.length !== 2){
+        if (countryISO.length !== 2) {
             console.log(countryName)
             this.countryISO = null;
-        }
-        else {
+        } else {
             this.countryISO = countryISO.toLowerCase();
         }
         this.connectName = connectName;
@@ -16,6 +15,8 @@ class Country {
     createElement() {
         let outerTr = document.createElement("tr");
         outerTr.style.cursor = "pointer";
+        outerTr.country = this;
+        outerTr.onclick = this.connectToCountry;
         document.getElementById("allCountriesTableBody").appendChild(outerTr);
 
         //Icon
@@ -87,6 +88,7 @@ class Country {
         return this.countryName;
     }
 
-    //ToDO Dropdown Menü
-
+    connectToCountry (element) {
+        eel.connect_to_location(this.country.connectName, "");
+    }
 }
