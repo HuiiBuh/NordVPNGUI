@@ -11,7 +11,6 @@
 class ConnectionButton {
     constructor(detailedState, state) {
         this.state = state;
-        console.log(this.state);
         this.detailedState = detailedState;
         this.oldDetailedState = null;
     }
@@ -43,36 +42,41 @@ class ConnectionButton {
     // 8 = duration of the connection
 
     setStateUI() {
-        //Set connected message
-        if (this.detailedState !== 0 && !this.detailedState.includes("Disconnected") && this.detailedState !== this.oldDetailedState) {
+        //Set message
+        if (this.detailedState !== 0 && this.detailedState.includes("Connected") && this.detailedState !== this.oldDetailedState) {
             this.oldDetailedState = this.detailedState;
             document.getElementById("connectionMessage").innerHTML = "&#8226; Connected";
             document.getElementById("connectionMessage").style.color = "green";
+            document.getElementById("connectionMessage").classList.remove("spinner-grow");
             document.getElementById("quickConnectButton").innerHTML = "Disconnect";
+            document.getElementById("quickConnectButton").onclick = connectButton.disconnect;
             document.getElementById("detailedConnectionMessage").innerHTML = "Connected to " + this.detailedState[2] + " (" + this.detailedState[4] + ")";
         }
-        //set disconnected message
         else if (this.detailedState.includes("Disconnected") && this.detailedState !== this.oldDetailedState) {
             this.oldDetailedState = this.detailedState;
             document.getElementById("connectionMessage").innerHTML = "&#8226; Disconnected";
             document.getElementById("connectionMessage").style.color = "red";
+            document.getElementById("connectionMessage").classList.remove("spinner-grow");
             document.getElementById("quickConnectButton").innerHTML = "Quick Connect";
+            document.getElementById("quickConnectButton").onclick = connectButton.connect;
             document.getElementById("detailedConnectionMessage").innerHTML = "Pick Country, or use quick connect."
-        }
-        // ToDo noch connecting hinzufügen
-        else {
-            // ToDo error werfen
+        } else {
+            document.getElementById("connectionMessage").innerHTML = "";
+            document.getElementById("connectionMessage").style.color = "orange";
+            document.getElementById("connectionMessage").classList.add("spinner-grow");
+            document.getElementById("quickConnectButton").onclick = null;
+            document.getElementById("detailedConnectionMessage").innerHTML = "";
         }
     }
 
-    connect(){
-        if (this.state){
-            eel.disconnect();
-        }
-        else {
-            eel.quick_connect();
-        }
+    connect() {
 
+        document.getElementById("quickConnectButton").innerHTML = "Connecting";
+        eel.quick_connect();
+    }
+
+    disconnect() {
+        document.getElementById("quickConnectButton").innerHTML = "Disconnecting";
+        eel.disconnect();
     }
 }
-

@@ -2,7 +2,7 @@
 
 class Country {
 
-    constructor(countryName, cities, countryISO, connectName) {
+    constructor(countryName, cities, countryISO, countryConnectName, cityConnectName) {
         this.countryName = countryName;
         this.cities = cities;
         if (countryISO.length !== 2) {
@@ -10,7 +10,7 @@ class Country {
         } else {
             this.countryISO = countryISO.toLowerCase();
         }
-        this.connectName = connectName;
+        this.connectName = countryConnectName;
     }
 
     createElement() {
@@ -62,14 +62,15 @@ class Country {
         dropTd.appendChild(dropdownDiv);
 
         //DropdownTable
-        let countryTable = document.createElement("table")
+        let countryTable = document.createElement("table");
         countryTable.classList.add("table", "table-borderless", "hover");
         countryTable.style.marginBottom = "0";
         dropdownDiv.appendChild(countryTable);
 
         //DropdownTableBody
-        let countryTbody = document.createElement("tbody")
+        let countryTbody = document.createElement("tbody");
         countryTable.appendChild(countryTbody);
+
 
         //Add countries
         for (let i = 0; i < this.cities.length; ++i) {
@@ -79,7 +80,7 @@ class Country {
 
             let countryDropTd = document.createElement("td");
             countryDropTd.classList.add("align-middle");
-            countryDropTd.innerText = this.cities[i];
+            countryDropTd.innerText = this.cities[i].replace(/_/g, " ");
             countryTr.appendChild(countryDropTd);
 
             let countyIconTd = document.createElement("td");
@@ -87,7 +88,7 @@ class Country {
 
             let countryIcon = document.createElement("a");
             countryIcon.classList.add("material-icons");
-            countryIcon.style = "color: #145079; float: right;";
+            countryIcon.style = "color:#145079;float:right;";
             countryIcon.innerHTML = "cached";
             countyIconTd.appendChild(countryIcon);
         }

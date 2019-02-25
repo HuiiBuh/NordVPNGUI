@@ -19,6 +19,13 @@
     height: 90px;
     right: 50px;
     bottom: 20px;
+    paddint:10px;
+}
+
+.ownCenter{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .btn {
@@ -28,7 +35,6 @@
 
 #quickConnectButton {
     height: 45px;
-    margin-top: 22.5px;
     border-radius: 0;
     float: right;
     background-color: #145079;
@@ -70,13 +76,3 @@ table.customHighlighting tr:hover {
 .menu-option:hover {
     background: rgba(0, 0, 0, 0.2);
 }
-
-
-  
-  
-  
-  
-  
-  
-  
-  

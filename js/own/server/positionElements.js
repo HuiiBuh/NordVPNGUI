@@ -3,8 +3,11 @@ function positionElements() {
   let body = window.innerHeight;
   let navbar = document.getElementById('navbar').offsetHeight;
 
-  let mainPageHeight = body - navbar;
+  let mainPageHeight = body - navbar -1;
   document.getElementById("mainPage").style.height = (mainPageHeight).toString() + "px";
+
+
+
 
   //set the floating connect Button to the right position
   let mapWidth = document.getElementById("map").offsetWidth;
@@ -23,13 +26,18 @@ function positionElements() {
       connectionStatusBox.style.width = (mapWidth).toString() + "px";
   }
 
+}
 
-  let connectionStatus = document.getElementById("connectionStatus");
-  let statusHeight = connectionStatus.clientHeight;
-  if (statusHeight > 48) {
-      connectionStatus.style.marginTop = ((90 - statusHeight) / 2).toString() + "px";
-  }
-  else {
-      connectionStatus.style.marginTop = ((90 - statusHeight) / 2).toString() + "px";
-  }
+
+
+//calls the positionElements() 5ms after a resizeEvent (if no other resize event has occurred)
+let resizeId;
+$(window).resize(function () {
+    clearTimeout(resizeId);
+    resizeId = setTimeout(positionElements, 5);
+});
+
+
+function callResetPosition() {
+    am4map.resetPosition();
 }

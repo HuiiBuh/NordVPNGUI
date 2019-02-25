@@ -27,16 +27,3 @@ function initalizeElements() {
 
     $("#allCountries").collapse('show');
 }
-
-
-//calls the positionElements() 5ms after a resizeEvent (if no other resize event has occurred)
-let resizeId;
-$(window).resize(function () {
-    clearTimeout(resizeId);
-    resizeId = setTimeout(positionElements, 5);
-});
-
-
-function callResetPosition() {
-    am4map.resetPosition();
-}

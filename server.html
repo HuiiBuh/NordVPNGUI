@@ -252,18 +252,23 @@
 
   </div>
 
+  <!-- @media Rule-->
+
   <!--floating button___________________________-->
   <div class="row floatingOver" id="connectionStatusBox">
-    <div class="container">
-      <div class="row" style="padding-right:15px; padding-left: 15px;">
-        <div class="col-7" id="connectionStatus" style="padding: 0; margin-top: 21px;">
-          <p class="font-weight-normal" style="margin:0; color: red;" id="connectionMessage">&#8226;
-            Disconnected</p>
-          <p class="font-weight-bolder" style="margin:0;" id="detailedConnectionMessage">Pick Country, or
-            use quick connect</p>
+    <div class="container" style="right: 0;left: 0;">
+      <div class="row ownCenter" id="connectContent" style="right: 15px;left: 0; padding: 15px;">
+        <div class="col-7" id="connectionStatus">
+          <p class="font-weight-normal" style="margin:0; color: red;" id="connectionMessage">
+            &#8226;Disconnected
+          </p>
+          <p class="font-weight-bolder" style="margin:0;" id="detailedConnectionMessage">
+            Pick Country, or use quick connect
+          </p>
         </div>
-        <div class="col-5" id="col5" style="padding:0;">
-          <button class="btn btn-primary" id="quickConnectButton" onclick="connectButton.connect()">Quick Connect
+        <div class="col-5" id="col5">
+          <button class="btn btn-primary ownCenter" id="quickConnectButton" style="right:10px;"
+                  onclick="myFunction()">Quick Connect
           </button>
         </div>
       </div>

@@ -1,5 +1,5 @@
 var connectButton;
-
+var am4map;
 var mapJSON;
 
 eel.expose(updateStatus);
@@ -11,17 +11,15 @@ function updateStatus(detailedState, state) {
 
     } else {
         connectButton.setState(state);
-        connectButton.setDetailedState(detailedState)
+        connectButton.setDetailedState(detailedState);
         connectButton.setStateUI();
     }
+
+    positionElements();
 }
 
 
 window.onload = async function () {
-
-
-    let d = new Date();
-    let a = d.getMilliseconds();
 
     //check of the countries are stored in the sessionstorage
     if (sessionStorage.getItem("countryObject") != "undefined" && sessionStorage.getItem("countryObject") != null) {
@@ -30,8 +28,9 @@ window.onload = async function () {
         let i = 0;
 
         for (let country in countriesObject) {
+
             if (!countryArray.hasOwnProperty(country))
-                countryArray.push(country)
+                countryArray.push(country);
             new Country(country.replace(/_/g, " "), countriesObject[country], getIsoOfCountry(country.replace(/_/g, " ")),
                 country).createElement();
             ++i;
@@ -45,8 +44,9 @@ window.onload = async function () {
         let i = 0;
 
         for (let country in countriesObject) {
+
             if (!countryArray.hasOwnProperty(country))
-                countryArray.push(country)
+                countryArray.push(country);
             new Country(country.replace(/_/g, " "), countriesObject[country], getIsoOfCountry(country.replace(/_/g, " ")),
                 country).createElement();
             ++i;
@@ -61,18 +61,21 @@ window.onload = async function () {
             document.getElementById("connectionMessage").innerHTML = "&#8226; Connected";
             document.getElementById("connectionMessage").style.color = "green";
             document.getElementById("quickConnectButton").innerHTML = "Disconnect";
-            document.getElementById("detailedConnectionMessage").innerHTML = "Connected to " + detailedState[2] + " (" + detailedState[4] + ")";
+            document.getElementById("detailedConnectionMessage").innerHTML = "Main Connected to " + detailedState[2] + " (" + detailedState[4] + ")";
         } else if (detailedState.includes("Disconnected")) {
             document.getElementById("connectionMessage").innerHTML = "&#8226; Disconnected";
             document.getElementById("connectionMessage").style.color = "red";
             document.getElementById("quickConnectButton").innerHTML = "Quick Connect";
             document.getElementById("detailedConnectionMessage").innerHTML = "Pick Country, or use quick connect."
         }
+
+
     }
 
     //create map
-    let am4map = new Map("map");
+    am4map = new Map("map");
     am4map.createMyMap();
+
 
     //create contextmenu of map
     contextmenu();
@@ -109,8 +112,8 @@ window.onload = async function () {
         "fill": am4core.color("#145079")
     }];
     am4map.setCustomData(mapJSON);
-    let t = new Date();
-    console.log(t.getMilliseconds() - a);
+    positionElements();
+
 };
 
 
