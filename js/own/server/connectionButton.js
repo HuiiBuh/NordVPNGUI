@@ -50,7 +50,7 @@ class ConnectionButton {
             document.getElementById("connectionMessage").classList.remove("spinner-grow");
             document.getElementById("quickConnectButton").innerHTML = "Disconnect";
             document.getElementById("quickConnectButton").onclick = connectButton.disconnect;
-            document.getElementById("detailedConnectionMessage").innerHTML = "Connected to " + this.detailedState[2] + " (" + this.detailedState[4] + ")";
+            document.getElementById("detailedConnectionMessage").innerHTML = "Connected to " + this.detailedState[2] +" - " + this.detailedState[3] + " (" + this.detailedState[4] + ")";
         }
         else if (this.detailedState.includes("Disconnected") && this.detailedState !== this.oldDetailedState) {
             this.oldDetailedState = this.detailedState;
@@ -62,7 +62,7 @@ class ConnectionButton {
             document.getElementById("detailedConnectionMessage").innerHTML = "Pick Country, or use quick connect."
         } else if (this.detailedState.includes("Connecting") || this.detailedState.includes("Disconnecting")){
             document.getElementById("connectionMessage").innerHTML = "";
-            document.getElementById("quickConnectButton").innerHTML = this.detailedState;
+            document.getElementById("quickConnectButton").innerHTML = this.state;
             document.getElementById("connectionMessage").style.color = "orange";
             document.getElementById("connectionMessage").classList.add("spinner-grow");
             document.getElementById("quickConnectButton").onclick = null;
@@ -71,6 +71,7 @@ class ConnectionButton {
     }
 
     connect() {
+        console.log("sdf")
         eel.quick_connect();
     }
 

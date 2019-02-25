@@ -80,6 +80,10 @@ class Country {
 
             let countryDropTd = document.createElement("td");
             countryDropTd.classList.add("align-middle");
+            countryDropTd.id = this.connectName + "+" + this.cities[i];
+            countryDropTd.city = this;
+
+            countryDropTd.onclick = this.connectToCity;
             countryDropTd.innerText = this.cities[i].replace(/_/g, " ");
             countryTr.appendChild(countryDropTd);
 
@@ -98,9 +102,15 @@ class Country {
         return this.countryName;
     }
 
-    connectToCountry(element) {
-        if (connectButton.getState() != "Connecting" && connectButton.getState() != "Disconnecting"){
+    connectToCountry() {
+        if (connectButton.getState() != "Connecting" && connectButton.getState() != "Disconnecting") {
             eel.connect_to_location(this.country.connectName, "");
+        }
+    }
+
+    connectToCity() {
+        if (connectButton.getState() != "Connecting" && connectButton.getState() != "Disconnecting") {
+            eel.connect_to_location(this.city.connectName, this.id.split("+")[this.id.split("+").length - 1]);
         }
     }
 }
