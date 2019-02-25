@@ -99,7 +99,8 @@ class Country {
     }
 
     connectToCountry(element) {
-        console.log(this);
-        eel.connect_to_location(this.country.connectName, "");
+        if (connectButton.getState() != "Connecting" && connectButton.getState() != "Disconnecting"){
+            eel.connect_to_location(this.country.connectName, "");
+        }
     }
 }

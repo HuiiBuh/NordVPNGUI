@@ -43,7 +43,7 @@ class ConnectionButton {
 
     setStateUI() {
         //Set message
-        if (this.detailedState !== 0 && this.detailedState.includes("Connected") && this.detailedState !== this.oldDetailedState) {
+        if (this.detailedState.includes("Connected") && this.detailedState !== this.oldDetailedState) {
             this.oldDetailedState = this.detailedState;
             document.getElementById("connectionMessage").innerHTML = "&#8226; Connected";
             document.getElementById("connectionMessage").style.color = "green";
@@ -60,8 +60,9 @@ class ConnectionButton {
             document.getElementById("quickConnectButton").innerHTML = "Quick Connect";
             document.getElementById("quickConnectButton").onclick = connectButton.connect;
             document.getElementById("detailedConnectionMessage").innerHTML = "Pick Country, or use quick connect."
-        } else {
+        } else if (this.detailedState.includes("Connecting") || this.detailedState.includes("Disconnecting")){
             document.getElementById("connectionMessage").innerHTML = "";
+            document.getElementById("quickConnectButton").innerHTML = this.detailedState;
             document.getElementById("connectionMessage").style.color = "orange";
             document.getElementById("connectionMessage").classList.add("spinner-grow");
             document.getElementById("quickConnectButton").onclick = null;
@@ -70,13 +71,10 @@ class ConnectionButton {
     }
 
     connect() {
-
-        document.getElementById("quickConnectButton").innerHTML = "Connecting";
         eel.quick_connect();
     }
 
     disconnect() {
-        document.getElementById("quickConnectButton").innerHTML = "Disconnecting";
         eel.disconnect();
     }
 }
