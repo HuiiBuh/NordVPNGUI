@@ -21,9 +21,11 @@ function updateStatus(detailedState, state) {
 
 window.onload = async function () {
 
+    let countriesObject;
+
     //check of the countries are stored in the sessionstorage
     if (sessionStorage.getItem("countryObject") != "undefined" && sessionStorage.getItem("countryObject") != null) {
-        let countriesObject = JSON.parse(sessionStorage.getItem("countryObject"));
+        countriesObject = JSON.parse(sessionStorage.getItem("countryObject"));
         let countryArray = new Array(countriesObject.length);
         let i = 0;
 
@@ -37,7 +39,7 @@ window.onload = async function () {
         }
     } else {
         let countriesJSON = await eel.return_cities()();
-        let countriesObject = JSON.parse(countriesJSON);
+        countriesObject = JSON.parse(countriesJSON);
         sessionStorage.setItem("countryObject", JSON.stringify(countriesObject));
 
         let countryArray = new Array(countriesObject.length);
@@ -79,14 +81,19 @@ window.onload = async function () {
 
     //create contextmenu of map
     contextmenu();
-    for (let country in countriesObject) {
-        var mapData = new Object();
-        mapData.id = getIsoOfCountry(country.replace(/_/g, " "));
-        mapData.name = country.replace(/_/g, " ");
-        mapData.value =
-        mapData.fill = am4core.color("#145079");
 
+    let mapData = new Array();
+    let arrayPosition = 0;
+    for (let country in countriesObject) {
+        mapData[arrayPosition] = new Object();
+        mapData[arrayPosition].id = getIsoOfCountry(country.replace(/_/g, " "));
+        mapData[arrayPosition].name = country.replace(/_/g, " ");
+        mapData[arrayPosition].value = arrayPosition;
+        mapData[arrayPosition].fill = am4core.color("#145079");
+        ++arrayPosition;
     }
+
+    console.log(mapData);
 
     mapJSON = [{
         "id": "US",
@@ -119,7 +126,7 @@ window.onload = async function () {
         "name": "Russland",
         "fill": am4core.color("#145079")
     }];
-    am4map.setCustomData(mapJSON);
+    am4map.setCustomData(mapData);
     positionElements();
 
 };
