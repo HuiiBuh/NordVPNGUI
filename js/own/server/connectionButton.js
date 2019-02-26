@@ -1,13 +1,3 @@
-//ToDo sobald auf irgendeinen der connect Buttons geklickt wird den worker, der den state festhält
-// pausieren lassen und erst wieder damit anfangen, wenn man einen Erfolg bei der Verbindung, oder einen
-// misserfolg zurückbekommen hat.
-
-// ToDO         outerTr.country = this; something like this for disconnect
-
-// ToDo (disconn) direkt auf disconnecting wechseln und aufpassen, dass der connect Button keine Funktion mehr hat
-
-// ToDo (quick) direkt auf connecting wechseln und aufpassen, dass der connect Button keine Funktion mehr hat
-
 class ConnectionButton {
     constructor(detailedState, state) {
         this.state = state;

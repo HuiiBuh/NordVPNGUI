@@ -79,6 +79,14 @@ window.onload = async function () {
 
     //create contextmenu of map
     contextmenu();
+    for (let country in countriesObject) {
+        var mapData = new Object();
+        mapData.id = getIsoOfCountry(country.replace(/_/g, " "));
+        mapData.name = country.replace(/_/g, " ");
+        mapData.value =
+        mapData.fill = am4core.color("#145079");
+
+    }
 
     mapJSON = [{
         "id": "US",

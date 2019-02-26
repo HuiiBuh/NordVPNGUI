@@ -1,5 +1,3 @@
-//ToDo remove _ in cities
-
 class Country {
 
     constructor(countryName, cities, countryISO, countryConnectName, cityConnectName) {
