@@ -1,5 +1,6 @@
 var connectButton;
 var am4map;
+var countryArray = new Array();
 var mapData = new Array();
 
 eel.expose(updateStatus);
@@ -26,34 +27,32 @@ window.onload = async function () {
     //check of the countries are stored in the sessionstorage
     if (sessionStorage.getItem("countryObject") != "undefined" && sessionStorage.getItem("countryObject") != null) {
         countriesObject = JSON.parse(sessionStorage.getItem("countryObject"));
-        let countryArray = new Array(countriesObject.length);
         let i = 0;
-
         for (let country in countriesObject) {
-
-            if (!countryArray.hasOwnProperty(country))
+            if (!countryArray.hasOwnProperty(country)) {
                 countryArray.push(country);
-            new Country(country.replace(/_/g, " "), countriesObject[country], getIsoOfCountry(country.replace(/_/g, " ")),
-                country).createElement();
+            }
+            countryArray[i] = new Country(country.replace(/_/g, " "), countriesObject[country], getIsoOfCountry(country.replace(/_/g, " ")),
+                country);
+            countryArray[i].createElement();
             ++i;
         }
     } else {
         let countriesJSON = await eel.return_cities()();
         countriesObject = JSON.parse(countriesJSON);
+        let i = 0;
         sessionStorage.setItem("countryObject", JSON.stringify(countriesObject));
 
-        let countryArray = new Array(countriesObject.length);
-        let i = 0;
-
         for (let country in countriesObject) {
-
             if (!countryArray.hasOwnProperty(country))
                 countryArray.push(country);
-            new Country(country.replace(/_/g, " "), countriesObject[country], getIsoOfCountry(country.replace(/_/g, " ")),
+            countryArray[i] = new Country(country.replace(/_/g, " "), countriesObject[country], getIsoOfCountry(country.replace(/_/g, " ")),
                 country).createElement();
             ++i;
         }
     }
+
+    console.log(countryArray);
 
 
     //check if the buttonstate is in the session storage
@@ -70,19 +69,16 @@ window.onload = async function () {
             document.getElementById("quickConnectButton").innerHTML = "Quick Connect";
             document.getElementById("detailedConnectionMessage").innerHTML = "Pick Country, or use quick connect."
         }
-
-
     }
 
     //create map
     am4map = new Map("map");
     am4map.createMyMap();
 
-
     //create contextmenu of map
     contextmenu();
 
-
+    //create the highlighting of the map
     let arrayPosition = 0;
     for (let country in countriesObject) {
         mapData[arrayPosition] = new Object();
@@ -92,15 +88,13 @@ window.onload = async function () {
         mapData[arrayPosition].fill = am4core.color("#145079");
         ++arrayPosition;
     }
-
-
     am4map.setCustomData(mapData);
     positionElements();
-
 };
 
 
 window.onbeforeunload = function () {
+    console.log("sdf");
     sessionStorage.setItem("buttonDetailedState", connectButton.getDetailedState());
 };
 
@@ -109,5 +103,4 @@ function callConnect(ArrayPos) {
     let connectCountry = getCountryName(mapData[ArrayPos].id).replace(/ /g, "_");
     console.log(connectCountry);
     eel.connect_to_location(connectCountry, "");
-
 }

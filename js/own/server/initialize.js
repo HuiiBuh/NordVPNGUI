@@ -2,9 +2,7 @@
 $(document).ready(function () {
 
     document.getElementById("map").addEventListener('contextmenu', event => event.preventDefault());
-
     initalizeElements();
-
     positionElements();
 
 });
