@@ -1,6 +1,6 @@
 var connectButton;
 var am4map;
-var mapJSON;
+var mapData = new Array();
 
 eel.expose(updateStatus);
 
@@ -82,7 +82,7 @@ window.onload = async function () {
     //create contextmenu of map
     contextmenu();
 
-    let mapData = new Array();
+
     let arrayPosition = 0;
     for (let country in countriesObject) {
         mapData[arrayPosition] = new Object();
@@ -93,39 +93,7 @@ window.onload = async function () {
         ++arrayPosition;
     }
 
-    console.log(mapData);
 
-    mapJSON = [{
-        "id": "US",
-        "name": "United States",
-        "value": 1,
-        "fill": am4core.color("#145079"),
-    }, {
-        "id": "FR",
-        "name": "France",
-        "value": 6,
-        "fill": am4core.color("#145079")
-    }, {
-        "id": "BR",
-        "name": "Brasilien",
-        "value": 2,
-        "fill": am4core.color("#145079")
-    }, {
-        "id": "DE",
-        "value": 2,
-        "name": "Germany",
-        "fill": am4core.color("#145079")
-    }, {
-        "id": "GB",
-        "value": 3,
-        "name": "Großbritannien",
-        "fill": am4core.color("#145079")
-    }, {
-        "id": "RU",
-        "value": 4,
-        "name": "Russland",
-        "fill": am4core.color("#145079")
-    }];
     am4map.setCustomData(mapData);
     positionElements();
 
@@ -135,3 +103,11 @@ window.onload = async function () {
 window.onbeforeunload = function () {
     sessionStorage.setItem("buttonDetailedState", connectButton.getDetailedState());
 };
+
+
+function callConnect(ArrayPos) {
+    let connectCountry = getCountryName(mapData[ArrayPos].id).replace(/ /g, "_");
+    console.log(connectCountry);
+    eel.connect_to_location(connectCountry, "");
+
+}

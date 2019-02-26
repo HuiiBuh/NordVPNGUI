@@ -28,8 +28,7 @@ class Map {
         polygonTemplate.fill = am4core.color("#b4b4b4");
 
         this.polygonSeries.mapPolygons.template.events.on("hit", event => {
-            console.log(event.target.dataItem.value);
-
+            callConnect(event.target.dataItem.value);
         });
 
         this.polygonSeries.mapPolygons.template.events.on("over", event => {
