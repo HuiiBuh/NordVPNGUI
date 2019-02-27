@@ -61,8 +61,15 @@
            style="margin-right: auto; margin-left: auto; margin-top: 6px; width: 97%" style="border-radius:0;">
     <div class="dropdown-divider"></div>
 
-    <div id="searchResults"></div>
-    <div id="servers">
+    <div id="searchResults">
+      <table class="table table-borderless customHighlighting">
+        <tbody id="searchResultsTable">
+        <!--SearchResults___________________________-->
+      </table>
+    </div>
+
+
+    <div id="server">
 
       <div style="width: 100%; cursor: pointer; margin-bottom:0.6rem;" data-toggle="collapse"
            data-target="#specialServers" aria-expanded="false">
@@ -264,7 +271,7 @@
       <div class="row ownCenter" id="connectContent" style="right: 15px;left: 0; padding: 15px;">
         <div class="col-7" id="connectionStatus">
           <p class="font-weight-normal" style="margin:0; color: red;" id="connectionMessage">
-            &#8226;Disconnected
+            &#8226;DisconnectedallCountriesTableBody
           </p>
           <p class="font-weight-bolder" style="margin:0;" id="detailedConnectionMessage">
             Pick Country, or use quick connect

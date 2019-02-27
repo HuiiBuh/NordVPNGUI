@@ -11,11 +11,12 @@ class Country {
         this.connectName = countryConnectName;
     }
 
-    createElement() {
+    createElement(mode) {
+
         let outerTr = document.createElement("tr");
         outerTr.style.cursor = "pointer";
         outerTr.country = this;
-        document.getElementById("allCountriesTableBody").appendChild(outerTr);
+        document.getElementById(mode).appendChild(outerTr);
 
         //Icon Td
         let countryIconTd = document.createElement("td");

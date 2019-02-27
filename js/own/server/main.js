@@ -34,7 +34,7 @@ window.onload = async function () {
             }
             countryArray[i] = new Country(country.replace(/_/g, " "), countriesObject[country], getIsoOfCountry(country.replace(/_/g, " ")),
                 country);
-            countryArray[i].createElement();
+            countryArray[i].createElement("allCountriesTableBody");
             ++i;
         }
     } else {
@@ -44,15 +44,15 @@ window.onload = async function () {
         sessionStorage.setItem("countryObject", JSON.stringify(countriesObject));
 
         for (let country in countriesObject) {
-            if (!countryArray.hasOwnProperty(country))
+            if (!countryArray.hasOwnProperty(country)) {
                 countryArray.push(country);
+            }
             countryArray[i] = new Country(country.replace(/_/g, " "), countriesObject[country], getIsoOfCountry(country.replace(/_/g, " ")),
-                country).createElement();
+                country);
+            countryArray[i].createElement("allCountriesTableBody");
             ++i;
         }
     }
-
-    console.log(countryArray);
 
 
     //check if the buttonstate is in the session storage
@@ -94,7 +94,6 @@ window.onload = async function () {
 
 
 window.onbeforeunload = function () {
-    console.log("sdf");
     sessionStorage.setItem("buttonDetailedState", connectButton.getDetailedState());
 };
 
