@@ -1,33 +1,78 @@
 #navbar a:link {
-  color: white;
+    color: white;
 }
 
 #navbar a:visited {
-  color: white
+    color: white;
 }
 
 .custom-control-input:checked ~ .custom-control-label::before {
-  color: #fff;
-  border-color: #145079;
-  background-color: #145079;
+    color: #fff;
+    border-color: #145079;
+    background-color: #145079;
 }
 
 .floatingOver {
-  z-index: 1000;
-  background-color: white;
-  position: absolute;
-  height: 80px;
+    z-index: 1;
+    background-color: white;
+    position: absolute;
+    height: 90px;
+    right: 50px;
+    bottom: 20px;
+    paddint:10px;
 }
 
-.btn{
-  border-radius: 0px;
-  border-color: #14517900;
+.ownCenter{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.btn {
+    border-radius: 0;
+    border-color: #14517900;
 }
 
 #quickConnectButton {
-  height: 40px;
-  margin-top: 20px;
-  border-radius: 0px;
-  position: absolute;
-  background-color: #145079;
+    height: 45px;
+    border-radius: 0;
+    float: right;
+    background-color: #145079;
+}
+
+table.customHighlighting tr:hover {
+    background-color: #d1d1d1 !important;
+}
+
+.centerContext {
+    text-align: center;
+}
+
+.menu {
+    width: 120px;
+    z-index: 2;
+    box-shadow: 0 4px 5px 3px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    display: none;
+    transition: 0.2s display ease-in;
+}
+
+.menu-options {
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    margin: 0;
+}
+
+.menu-option {
+    font-weight: 500;
+    z-index: 1;
+    font-size: 14px;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+}
+
+.menu-option:hover {
+    background: rgba(0, 0, 0, 0.2);
 }
