@@ -27,8 +27,10 @@ class Map {
         polygonTemplate.tooltipText = "{name}{category}";
         polygonTemplate.fill = am4core.color("#b4b4b4");
 
+        //calls the connect to country function with the array position of the country
         this.polygonSeries.mapPolygons.template.events.on("hit", event => {
-            callConnect(event.target.dataItem.value);
+            //uses the country object in the countryArray to call the connectToCountry method
+            countryArray[event.target.dataItem.value].connectToCountry();
         });
 
         this.polygonSeries.mapPolygons.template.events.on("over", event => {
