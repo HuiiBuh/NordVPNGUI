@@ -30,7 +30,8 @@ class Map {
         //calls the connect to country function with the array position of the country
         this.polygonSeries.mapPolygons.template.events.on("hit", event => {
             //uses the country object in the countryArray to call the connectToCountry method
-            countryArray[event.target.dataItem.value].connectToCountry();
+            if(typeof (event.target.dataItem.value) !== "undefined")
+                countryArray[event.target.dataItem.value].connectToCountry();
         });
 
         this.polygonSeries.mapPolygons.template.events.on("over", event => {
