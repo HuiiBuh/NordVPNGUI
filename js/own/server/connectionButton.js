@@ -52,7 +52,7 @@ class ConnectionButton {
 
             if (typeof (this.place) !== "undefined" && this.place !== null) {
                 if (typeof (this.oldPlace) !== "undefined" && this.oldPlace !== null)
-                    mapData[this.oldPlace].fill = am4core.color("#145079");
+                    mapData[this.oldPlace].fill = am4core.color("#145079");  //145079
                 mapData[this.place].fill = am4core.color("#0b7900");
                 am4map.resetPosition();
                 am4map.setCustomData(mapData);
