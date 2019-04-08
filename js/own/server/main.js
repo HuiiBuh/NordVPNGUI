@@ -3,28 +3,17 @@ let am4map;
 let countryArray = [];
 let mapData = [];
 
+$(document).ready(async function () {
+    let loginStatus = await eel.return_login_status;
+
+    if (loginStatus)
+        window.location.href = "login.html";
+});
+
 
 window.onload = async function () {
 
     initalizeElements();
-    /*
-        //check if the buttonstate is in the session storage
-        if (sessionStorage.getItem("buttonDetailedState") != "undefined" && sessionStorage.getItem("buttonDetailedState") != null) {
-            let detailedState = sessionStorage.getItem("buttonDetailedState");
-            if (detailedState !== 0 && !detailedState.includes("Disconnected")) {
-                document.getElementById("connectionMessage").innerHTML = "&#8226; Connected";
-                document.getElementById("connectionMessage").style.color = "green";
-                document.getElementById("quickConnectButton").innerHTML = "Disconnect";
-                document.getElementById("detailedConnectionMessage").innerHTML = "Main Connected to " + detailedState[2] + " (" + detailedState[4] + ")";
-            } else if (detailedState.includes("Disconnected")) {
-                document.getElementById("connectionMessage").innerHTML = "&#8226; Disconnected";
-                document.getElementById("connectionMessage").style.color = "red";
-                document.getElementById("quickConnectButton").innerHTML = "Quick Connect";
-                document.getElementById("detailedConnectionMessage").innerHTML = "Pick Country, or use quick connect."
-            }
-        }
-    */
-
 
     //get the countries from Python
     let countriesObject;
