@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Login failure</title>
+  <link rel="icon" href="icons/nordvpn.png" type="image/x-icon">
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--CSS-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!--eel.js-->
+  <script type="text/javascript" src="/eel.js"></script>
+
+
+  <!--JavaScript for page-->
+  <script type="text/javascript" src="js/libary/bootstrap/jquery-3.3.1.slim.min.js"></script>
+  <script type="text/javascript" src="js/libary/bootstrap/popper.min.js"></script>
+  <script type="text/javascript" src="js/libary/bootstrap/bootstrap.min.js"></script>
+
+
+  <script>
+      $(document).ready(function () {
+          $('#login-error').modal({backdrop: "static"})
+      });
+  </script>
+</head>
+<body>
+
+<!-- Modal -->
+<div class="modal fade" id="login-error" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body" style="padding: 50px;">
+        <h2>
+          You have to login to the nordvpn linux client with the terminal and the command:
+          <br>
+          <br>
+          <div style="text-align: center">
+            <code style="text-align: center">
+              nordvpn login
+            </code>
+          </div>
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

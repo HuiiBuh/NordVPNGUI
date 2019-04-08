@@ -1,6 +1,6 @@
 class Country {
 
-    constructor(countryName, cities, countryISO, countryConnectName, cityConnectName) {
+    constructor(countryName, cities, countryISO, countryConnectName) {
         this.countryName = countryName;
         this.cities = cities;
         if (countryISO.length !== 2) {
@@ -103,7 +103,13 @@ class Country {
 
     connectToCountry() {
         if (connectButton.getState() != "Connecting" && connectButton.getState() != "Disconnecting") {
-            eel.connect_to_location(this.country.connectName, "");
+            try {
+                eel.connect_to_location(this.country.connectName, "");
+            } catch (e) {
+                if (e instanceof TypeError) {
+                    eel.connect_to_location(this.connectName, "");
+                }
+            }
         }
     }
 
