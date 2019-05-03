@@ -17,6 +17,16 @@
 
   <!--eel.js-->
   <script type="text/javascript" src="/eel.js"></script>
+  <script type="text/javascript">
+      login();
+
+      async function login() {
+          let loginStatus = await eel.return_login_status;
+
+          if (loginStatus)
+              window.location.href = "login.html";
+      }
+  </script>
 
 
   <!--JavaScript for page-->

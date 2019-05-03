@@ -3,13 +3,6 @@ let am4map;
 let countryArray = [];
 let mapData = [];
 
-$(document).ready(async function () {
-    let loginStatus = await eel.return_login_status;
-
-    if (loginStatus)
-        window.location.href = "login.html";
-});
-
 
 window.onload = async function () {
 
