@@ -1,4 +1,9 @@
 const { app, BrowserWindow } = require('electron');
+const { spawn , fork} = require('child_process');
+
+
+
+executeCommand(["nordvpn", "connect"]);
 
 let win;
 
@@ -13,6 +18,7 @@ function createWindow () {
   });
 
   // and load the index.html of the app.
+  win.loadFile('server.html');
   win.loadFile('server.html');
   win.setMenuBarVisibility(false);
 
@@ -39,3 +45,47 @@ app.on('activate', () => {
     createWindow()
   }
 });
+
+
+function executeCommand(command) {
+
+  let worker = fork("./worker.js");
+  worker.send(command);
+
+  worker.on('message', (message) => {
+    console.log(`Number of mails sent ${message}`);
+  });
+
+  for (let i = 0; i < 400000000000; ++i){
+    l = "";
+  }
+
+
+}
+
+
+
+/*
+function f() {
+
+    let first = false;
+    let connecting = false;
+
+
+    const nordvpn_connect = spawn('nordvpn', ['connect']);
+
+    nordvpn_connect.stdout.on('data', (data) => {
+
+        let output = `${data}`;
+        if (output === "\r-" || first){
+            first = true;
+            if (output.includes("Connecting") || connecting){
+                connecting = true;
+                if (output.includes("connected")){
+                    return true;
+                }
+            }
+        }
+    });
+}
+*/
