@@ -1,0 +1,23 @@
+{
+  "name": "nord-node",
+  "version": "0.0.1",
+  "description": "Electron app for NordVPN",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuiiBuh/NordVPNGUI.git"
+  },
+  "author": "HuiiBuh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HuiiBuh/NordVPNGUI/issues"
+  },
+  "homepage": "https://github.com/HuiiBuh/NordVPNGUI#readme",
+  "devDependencies": {
+    "electron": "^5.0.8"
+  }
+}
