@@ -19,7 +19,6 @@ function createWindow () {
 
   // and load the index.html of the app.
   win.loadFile('server.html');
-  win.loadFile('server.html');
   win.setMenuBarVisibility(false);
 
   // Emitted when the window is closed.
